@@ -1,4 +1,4 @@
-{{-- 
+
 	@foreach( $sidebar_widgets as $widget_key => $widget )
 
 		@php 
@@ -24,4 +24,4 @@
 	 	</div>
 
 	@endforeach
-	--}}
+	

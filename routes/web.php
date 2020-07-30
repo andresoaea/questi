@@ -23,3 +23,5 @@ Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('get-questions', 'HomeController@getQuestions');
+
+Route::get('add-question', 'QuestionController@create')->name('addQuestion');

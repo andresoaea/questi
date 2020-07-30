@@ -1,0 +1,1 @@
+<a href="{{ route('addQuestion') }}">Ask a Question</a>
