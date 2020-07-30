@@ -1,23 +1,50 @@
-@extends('layouts.app')
+@extends('layouts.master') 
+@section('title', 'Questi - Q&A Platform') 
+@section('content') 
 
-@section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
+    {{--
 
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
+    @guest
+        <li><a href="{{ route('login') }}">Login</a></li>
+        <li><a href="{{ route('register') }}">Register</a></li>
+    @else
+        
+             {{ Auth::user()->firstname . ' ' . Auth::user()->lastname }} 
 
-                    {{ __('You are logged in!') }}
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-@endsection
+            <ul>
+                <li>
+                    <a href="{{ route('logout') }}"
+                        onclick="event.preventDefault();
+                                 document.getElementById('logout-form').submit();">
+                        Logout
+                    </a>
+
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        {{ csrf_field() }}
+                    </form>
+                </li>
+            </ul>
+        
+    @endguest
+
+   
+        <section class="questions">
+        @foreach($questions as $question) 
+
+            <h1>{{ $question->title }}</h1>
+            <p>{{ $question->description }}</p>
+            <p style="color: green">{{ $categories[$question->category]['name'] }}</p>
+            <p style="color: red">Intrebarea lui {{ $authors[$question_author_ids[$question->id]]['firstname'] }}</p>
+
+            <br>
+
+        @endforeach
+    </section>
+    --}}
+
+    <section class="home-questions">
+       <!--  @{{ questions }} -->
+        <show-all-questions><show-all-questions>
+    </section>
+
+@stop

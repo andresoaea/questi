@@ -1,0 +1,83 @@
+.parallax-container {
+  position: relative;
+  //height: 18vw;
+  overflow: hidden;
+  //margin-bottom: 40px;
+
+  	.header-parallax {
+  		position: absolute;
+  		top: 0;
+  		left: 0;
+  		right: 0;
+  		bottom: 0;
+  	}
+
+  	.container {
+  		padding: 4% 0;
+
+  		h3, p {
+  			text-shadow: -1px -1px 3px rgb(0, 0, 0);
+  		}
+
+  		h3 {
+  			font-size: 1.4rem;
+  		}
+
+  		p {
+  			font-size: 13px;
+  		}
+  	}
+
+  	img {
+  		position: relative;
+  		top: -50%;
+  	}
+
+}
+
+.overlay {
+ // position: absolute;
+ /* top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;*/
+  background: rgba(0, 0, 0, 0.4);
+  color: white;
+  //text-align: center;
+
+  .col-create-new-account {
+  	display : flex;
+  	align-items : center;
+
+  	   a {
+  	   	display: block;
+		width: 100%;
+		border: none;
+		padding: 10px 20px;
+		color: #FF7A00;
+		border-radius: 4px;
+		cursor: pointer;
+		text-align: center;
+		transition: all .5s ease;
+		border: 2px solid #FF7A00;
+		background-color: rgba(0,0,0,.2);
+
+	  	/*background-color: #F08727;
+	  	display: block;
+	    width: 100%;
+	    border: none;
+	    padding: 10px 20px;
+	    color: #fff;
+	    border-radius: 4px;
+	    opacity: .94;
+	    cursor: pointer;
+	    text-align: center;
+	    transition: opacity .5s ease;*/
+
+	    &:hover, &:focus {
+	    	color: #fff;
+	    	background-color: #FF7A00;
+	    }
+	  }
+  }
+}

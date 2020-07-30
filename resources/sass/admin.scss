@@ -1,0 +1,15 @@
+// Bootstrap
+//@import '~admin-lte/node_modules/bootstrap/dist/css/bootstrap.min.css';
+
+// Fontawesome
+@import 'node_modules/font-awesome/scss/font-awesome.scss';
+
+// AdminLTE
+@import '~admin-lte/dist/css/adminlte.css';
+
+//@import '~admin-lte/dist/css/AdminLTE.css';
+//@import '~admin-lte/dist/css/skins/_all-skins.css';
+
+// Custom style
+@import 'admin/custom';
+@import 'admin/components/login';

@@ -6,14 +6,29 @@ const mix = require("laravel-mix");
  |--------------------------------------------------------------------------
  |
  | Mix provides a clean, fluent API for defining some Webpack build steps
- | for your Laravel application. By default, we are compiling the Sass
- | file for the application as well as bundling up all the JS files.
+ | for your Laravel mainlication. By default, we are compiling the Sass
+ | file for the mainlication as well as bundling up all the JS files.
  |
  */
 
-mix.js("resources/js/app.js", "public/js")
-    .sass("resources/sass/app.scss", "public/css")
+// Paths
+//mix.setPublicPath("../");
+mix.setResourceRoot("../");
+
+// Source maps
+if (!mix.inProduction()) {
+    mix.webpackConfig({
+        devtool: "source-map"
+    }).sourceMaps();
+}
+
+// Compiling options
+mix.js("resources/js/main.js", "public/js")
+    .sass("resources/sass/main.scss", "public/css")
+    .options({
+        processCssUrls: true
+    })
     .browserSync({
         proxy: "http://127.0.0.1/questi/public", // your domain test
-        port: 8000 // your port
+        port: 3000 // your port
     });

@@ -1,0 +1,163 @@
+@import 'main';
+
+#profile {
+
+	@import '~admin-lte/build/scss/AdminLTE-raw';
+
+	.container {
+		margin: 30px auto;
+
+		& > .row > div > div {
+			background-color: #fff;
+			padding: 14px;
+		}
+	}
+
+	.user-info {
+
+		.widget-user-image img {
+			height: 90px;
+		}
+
+		.widget-user-header {
+			//background-size: 108% !important;
+
+			h3, h5 {
+				text-shadow: -1px -1px 3px #000;
+			}
+			h3 {
+				font-size: 24px;
+			}
+			h5 {
+				font-size: 15px;
+			}
+		}
+
+		.user-sumar {
+			p {
+				margin-bottom: 4px;
+				font-size: 14px;
+
+				span {
+					font-weight: bold;
+				}
+			}
+		}
+
+		ul.nav {
+			margin-top: 30px;
+		}
+	}
+
+
+
+	// right column
+
+	.section-title {
+		p {
+			color: #00686d;
+			font-size: 20px;
+		}
+
+		hr.cleared {
+			margin-top: -8px;
+		}
+	}
+
+	table:not(.user-data-table) {
+		border-collapse: separate;
+		border-spacing: 12px;
+		min-width: 70%;
+
+		input {
+			&::placeholder {
+				font-size: 13px;
+			}
+		}
+
+		tr {
+			td:first-child {
+				color: grey;
+			}
+			td:last-child {
+				padding-left: 20px;
+			}
+		}
+
+		.btn-delete {
+			position: absolute;
+		    margin-left: 15px;
+		    border-width: 2px;
+		    padding: 6px 16px;
+		}
+
+		.invalid-feedback {
+			display: block;
+		}
+
+		.upload-btn-wrapper {
+			position: relative;
+			overflow: hidden;
+			display: inline-block;
+
+			.btn {
+				border: 2px solid gray;
+				color: gray;
+				background-color: white;
+				padding: 6px 18px;
+				border-radius: 8px;
+				font-size: 16px;
+				font-weight: bold;
+			}
+
+			input[type=file] {
+				font-size: 100px;
+				position: absolute;
+				left: 0;
+				top: 0;
+				opacity: 0;
+				cursor: pointer;
+			}
+			
+		}
+
+	}
+
+	table.user-data-table {
+		color: #5d5d5d;
+		font-size: 14px;
+
+		th {
+			border: none;
+		}
+
+		td:first-child {
+			font-size: 16px;
+		}
+	}
+
+	table.answers-list-table {
+		font-size: 15px;
+
+		tr:first-child td {
+			border: none;
+		}
+
+		td.users-image {
+			width: 140px;
+
+			img {
+				width: 40px;
+			}
+
+			i {
+				margin-left: 5px;
+				color: #F08727;
+			}
+		}
+
+		
+	}
+
+
+}
