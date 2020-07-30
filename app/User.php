@@ -2,13 +2,13 @@
 
 namespace App;
 
-use Illuminate\Contracts\Auth\MustVerifyEmail;
-use Illuminate\Foundation\Auth\User as Authenticatable;
+//use Laravel\Passport\HasApiTokens;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
 {
-    use Notifiable;
+     use HasApiTokens, Notifiable;
 
     /**
      * The attributes that are mass assignable.
@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'username', 'firstname', 'lastname', 'picture', 'fbid', 'email', 'role', 'password'
     ];
 
     /**
@@ -28,12 +28,27 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    /**
-     * The attributes that should be cast to native types.
-     *
-     * @var array
-     */
-    protected $casts = [
-        'email_verified_at' => 'datetime',
-    ];
+
+    public function getPictureAttribute()
+    {
+
+        //return url('/image-storage/profile') . '/aaa';
+
+        $fb_id = $this->attributes['fbid'];
+        $picture = $this->attributes['picture'];
+        $fb_picture ='https://graph.facebook.com/' . $fb_id . '/picture?height=150&width=150';
+
+        if(empty($picture)) 
+        {
+            if(!empty($fb_id))
+            {
+                return $fb_picture;
+            } 
+        }
+        else 
+        {
+            return $picture;
+        }
+
+    }
 }
