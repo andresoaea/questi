@@ -18,11 +18,11 @@
 		<script>window.currentUser = {!! $currnt_user !!}</script>
 <!-- 	<script src="https://abouolia.github.io/sticky-sidebar/js/ResizeSensor.js"></script> -->
 
-	<script src="{{ URL::asset('js/main.js',  Request::secure()) }}"></script> 
+	<script src="js/main.js"></script> 
 
 
 	@if(!empty($isProfilePage))
-		<script src="{{ URL::asset('js/profile.js', Request::secure()) }}"></script> 
+		<script src="js/profile.js"></script> 
 	@endif
 	
 
