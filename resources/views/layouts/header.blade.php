@@ -12,9 +12,9 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
         
         @if(!empty($isProfilePage))
-           <link rel="stylesheet" href="css/profile.css">
+           <link rel="stylesheet" href="{{ URL::to('css/profile.css') }}">
         @else 
-           <link rel="stylesheet" href="css/main.css">
+           <link rel="stylesheet" href="{{ URL::to('css/main.css') }}">
         @endif     
 
     </head>
