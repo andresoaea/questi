@@ -2659,13 +2659,18 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: 'answer-form',
+  name: "answer-form",
   data: function data() {
     return {
       form: new Form({
-        text: '',
+        text: "",
         "for": this.$parent.question.id
       }),
       currentUser: currentUser
@@ -2678,30 +2683,31 @@ __webpack_require__.r(__webpack_exports__);
       // Snow progress bar
       this.$Progress.start(); // Submit the form via a POST request
 
-      this.form.post(siteUrl + '/api/answer').then(function (response) {
+      this.form.post(siteUrl + "/api/answer").then(function (response) {
         // Hide progress bar
-        _this.$Progress.finish(); // Show confirmation
+        _this.$Progress.finish();
 
+        _this.form.text = ""; // Show confirmation
 
         swal({
-          position: 'center',
-          type: 'success',
-          html: '<h5>Your answer has been added</h5>',
+          position: "center",
+          type: "success",
+          html: "<h5>Your answer has been added</h5>",
           showConfirmButton: false,
           showCancelButton: true
         }); // Add the anwer to the answers list
         //console.log(data)
         // this.$parent.answers.push(response.data)
 
-        _main__WEBPACK_IMPORTED_MODULE_0__["bus"].$emit('updateAnswersData', response.data.answer);
+        _main__WEBPACK_IMPORTED_MODULE_0__["bus"].$emit("updateAnswersData", response.data.answer);
       })["catch"](function (error) {
         _this.$Progress.fail();
 
         if (error.response.status !== 422) {
           swal({
-            position: 'center',
-            type: 'error',
-            html: "\n\t\t\t\t\t  \t<h4>Oops. Something went wrong..</h4>\n\t\t\t\t\t  \t<p>Your answer wasn't saved in our database.</p>\n\t\t\t\t\t  \t<h5>Please try again later!</h5>\n\t\t\t\t\t  ",
+            position: "center",
+            type: "error",
+            html: "\n\t\t\t\t\t\t  \t<h4>Oops. Something went wrong..</h4>\n\t\t\t\t\t\t  \t<p>Your answer wasn't saved in our database.</p>\n\t\t\t\t\t\t  \t<h5>Please try again later!</h5>\n\t\t\t\t\t\t  ",
             showConfirmButton: false,
             showCancelButton: true
           });
@@ -2709,7 +2715,7 @@ __webpack_require__.r(__webpack_exports__);
       });
     },
     showLogin: function showLogin() {
-      _main__WEBPACK_IMPORTED_MODULE_0__["bus"].$emit('showLogin', true);
+      _main__WEBPACK_IMPORTED_MODULE_0__["bus"].$emit("showLogin", true);
     }
   }
 });
@@ -65948,7 +65954,7 @@ var staticRenderFns = [
             staticClass: "fa fa-facebook-square",
             attrs: { "aria-hidden": "true" }
           }),
-          _vm._v(" Login with Facebook")
+          _vm._v(" Login with Facebook\n              ")
         ])
       ])
     ])
