@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<header class="section-title">
-			<p class="float-left">{{ user.firstname }} user questions</p>
+			<p class="float-left">{{ user.firstname }}'s questions</p>
 			<span class="float-right"> Total: {{ getProperty('questionsCount') }}</span>
 			<div class="clearfix"></div>
 			<hr class="cleared" />

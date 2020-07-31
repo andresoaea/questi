@@ -14,19 +14,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::middleware('auth:api')->get('/user', function (Request $request) {
-//     return $request->user();
-// });
-
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
 
-// Route::get('answers/{question_id}', ['as' => 'answers.index', 'uses' => 'AnswerController@index']);
+Route::get('answers/{question_id}', ['as' => 'answers.index', 'uses' => 'AnswerController@index']);
 
 
-// Route::get('reaction/{question_id}/{current_user?}', 'ReactionController@show');
+Route::get('reaction/{question_id}/{current_user?}', 'ReactionController@show');
 
 Route::group(['middleware' => ['auth:api']], function () {
    // Route::resource('reaction', 'ReactionController', ['only' => ['store']]);

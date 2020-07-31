@@ -87,6 +87,7 @@ class QuestionController extends Controller
         $question['category'] = $category;
         $question_title = $question['title'];
 
+        
         \JavaScript::put([
             'question'      => $question
             //'currentUser'   => Auth:: check() ? Auth::user()->makeHidden(['email', 'created_at', 'updated_at']) : false

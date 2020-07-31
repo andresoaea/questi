@@ -25,6 +25,8 @@ if (!mix.inProduction()) {
 // Compiling options
 mix.js("resources/js/main.js", "public/js")
     .sass("resources/sass/main.scss", "public/css")
+    .js("resources/js/profile/profile.js", "public/js")
+    .sass("resources/sass/profile.scss", "public/css")
     .options({
         processCssUrls: true
     })

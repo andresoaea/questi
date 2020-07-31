@@ -14561,7 +14561,7 @@ a.text-dark:focus {
 
 body {
   font-family: "Poppins", sans-serif;
-  background-color: #F3F3F3;
+  background-color: #f3f3f3;
 }
 
 body a,
@@ -14593,7 +14593,7 @@ body .popover .popover-body button {
 .home-questions a:hover,
 .home-questions a:focus,
 .home-questions a:active {
-  color: #2F3239;
+  color: #2f3239;
 }
 
 .home-questions .question,
@@ -14658,6 +14658,7 @@ body .popover .popover-body button {
 .single-question .answer-wrp .user-question header span {
   color: #ffffff;
   font-weight: 400;
+  font-size: 10px;
 }
 
 .home-questions .question .user-question header span.badge-warning,
@@ -14802,7 +14803,7 @@ body .popover .popover-body button {
   position: relative;
   width: 100%;
   margin-top: 40px;
-  background-color: #FF8719;
+  background-color: #ff8719;
   padding: 10px;
   color: #fff;
   border-radius: 4px;
@@ -14815,7 +14816,7 @@ body .popover .popover-body button {
   display: inherit;
   font: normal normal normal 14px/1 FontAwesome;
   font-size: 94px;
-  color: #FF8719;
+  color: #ff8719;
   transform: rotate(150deg);
   margin-top: -25px;
   margin-left: -12px;
