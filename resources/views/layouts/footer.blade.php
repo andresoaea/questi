@@ -20,11 +20,11 @@
 
 	<script src="{{ URL::asset('js/main.js') }}"></script> 
 
-{{-- 
+
 	@if(!empty($isProfilePage))
 		<script src="{{ URL::asset('js/profile.js') }}"></script> 
 	@endif
-	--}}
+	
 
 <!-- 	<script src="https://cdn.rawgit.com/leafo/sticky-kit/v1.1.2/jquery.sticky-kit.min.js"></script> -->
 

@@ -25,3 +25,8 @@ Route::get('/', 'HomeController@index')->name('home');
 Route::get('get-questions', 'HomeController@getQuestions');
 
 Route::get('add-question', 'QuestionController@create')->name('addQuestion');
+
+
+//Profile 
+Route::get('profile', 'ProfileController@index')->middleware('auth');
+Route::get('profile/{any}', 'ProfileController@index')->middleware('auth');
