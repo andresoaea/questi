@@ -14669,6 +14669,7 @@ body .popover .popover-body button {
   color: #ffffff;
   font-weight: 400;
   font-size: 10px;
+  text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.3);
 }
 
 .home-questions .question .user-question header span.badge-warning,

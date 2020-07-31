@@ -16,7 +16,11 @@ class WidgetController extends Controller
            
                 'add_new_question_button' => [
                     'not_standard_layout' => true
-                ]
+				],
+				'site_stats' => [
+					'title' => 'Statistics'
+					// 'not_standard_layout' => true
+				]
             
         ];
 
@@ -54,7 +58,6 @@ class WidgetController extends Controller
 		// foreach ($default_widgets as $widget_key => $widget_data) {
 		// 	$widgets[$widget_key] = self::$widget_data();
 		// }
-
 	
 
 		return $widgets;
@@ -105,7 +108,7 @@ class WidgetController extends Controller
     			'icon'   => $default['icon'],
     			'number' => $what === 'best_answers' ? $model::whereNotNull('best_answer')->count() : $model::count()
     		];
-    	}
+		}
 
     	return $stats;
 
