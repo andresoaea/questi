@@ -2214,6 +2214,30 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -2222,11 +2246,11 @@ __webpack_require__.r(__webpack_exports__);
   components: {
     LoginForm: _LoginForm_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
     HeaderArea: _HeaderArea_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
-    'slide-up-down': vue_slide_up_down__WEBPACK_IMPORTED_MODULE_3__["default"]
+    "slide-up-down": vue_slide_up_down__WEBPACK_IMPORTED_MODULE_3__["default"]
   },
   data: function data() {
     return {
-      csrfToken: '',
+      csrfToken: "",
       siteUrl: siteUrl,
       showLogin: false,
       currentUser: currentUser,
@@ -2238,7 +2262,7 @@ __webpack_require__.r(__webpack_exports__);
       this.showLogin = !this.showLogin;
     },
     logout: function logout() {
-      document.getElementById('logout-form').submit();
+      document.getElementById("logout-form").submit();
     },
     searchIt: _.debounce(function (e) {
       var _this2 = this;
@@ -2246,11 +2270,11 @@ __webpack_require__.r(__webpack_exports__);
       this.searching = true;
       var queryString = e.target.value; // if(queryString) {
 
-      axios.get('get-questions?q=' + queryString).then(function (response) {
+      axios.get("get-questions?q=" + queryString).then(function (response) {
         // console.log(response.data.questions)
         var _this = _this2;
         setTimeout(function () {
-          _main__WEBPACK_IMPORTED_MODULE_0__["bus"].$emit('updateQuestions', {
+          _main__WEBPACK_IMPORTED_MODULE_0__["bus"].$emit("updateQuestions", {
             searchQuery: queryString,
             questionsData: response.data
           });
@@ -2262,8 +2286,8 @@ __webpack_require__.r(__webpack_exports__);
   created: function created() {
     var _this3 = this;
 
-    this.csrfToken = window.$('meta[name="csrf-token"]').attr('content');
-    _main__WEBPACK_IMPORTED_MODULE_0__["bus"].$on('showLogin', function (show) {
+    this.csrfToken = window.$('meta[name="csrf-token"]').attr("content");
+    _main__WEBPACK_IMPORTED_MODULE_0__["bus"].$on("showLogin", function (show) {
       _this3.showLogin = !_this3.showLogin;
     });
   }
@@ -2458,6 +2482,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -2475,7 +2505,7 @@ __webpack_require__.r(__webpack_exports__);
     var _this = this;
 
     // Get the asnwers list from server
-    axios.get(siteUrl + '/api/answers/' + this.questionId).then(function (response) {
+    axios.get(siteUrl + "/api/answers/" + this.questionId).then(function (response) {
       _this.answers = response.data.answers;
       _this.authors = response.data.authors;
 
@@ -2486,7 +2516,7 @@ __webpack_require__.r(__webpack_exports__);
 
       setTimeout(function () {
         if (window.location.hash) {
-          $('html, body').stop().animate({
+          $("html, body").stop().animate({
             scrollTop: $(window.location.hash).offset().top
           });
         }
@@ -2494,16 +2524,16 @@ __webpack_require__.r(__webpack_exports__);
     }); //console.log(currentUser.id)
     // if((this.answers.length === 0 && currentUser) || !(currentUser.id in this.authors) )  {
     // 	this.authors[currentUser.id] = currentUser
-    // } 
+    // }
     // Listen for adding new answer
 
-    _main__WEBPACK_IMPORTED_MODULE_0__["bus"].$on('updateAnswersData', function (data) {
-      _this.answers.push(data);
+    _main__WEBPACK_IMPORTED_MODULE_0__["bus"].$on("updateAnswersData", function (data) {
+      _this.answers.unshift(data);
     });
   },
   methods: {
     answerWrapperClass: function answerWrapperClass(id) {
-      return 'answer-wrp' + (id === question.best_answer ? ' best' : '');
+      return "answer-wrp" + (id === question.best_answer ? " best" : "");
     },
     isTheBest: function isTheBest(id) {
       return id === question.best_answer;
@@ -2512,10 +2542,10 @@ __webpack_require__.r(__webpack_exports__);
       return this.authors[answer.author][which];
     },
     fullnameTooltip: function fullnameTooltip(answer) {
-      return 'Answered by: ' + this.getAuthorName(answer, 'firstname') + ' ' + (this.getAuthorName(answer, 'lastname') || '');
+      return "Answered by: " + this.getAuthorName(answer, "firstname") + " " + (this.getAuthorName(answer, "lastname") || "");
     },
     addedFullTime: function addedFullTime(time) {
-      return 'Added on: ' + this.$options.filters.relativeTime(time, 'LLLL');
+      return "Added on: " + this.$options.filters.relativeTime(time, "LLLL");
     }
   }
 });
@@ -2694,7 +2724,8 @@ __webpack_require__.r(__webpack_exports__);
           type: "success",
           html: "<h5>Your answer has been added</h5>",
           showConfirmButton: false,
-          showCancelButton: true
+          showCancelButton: false,
+          timer: 1500
         }); // Add the anwer to the answers list
         //console.log(data)
         // this.$parent.answers.push(response.data)
@@ -65111,7 +65142,7 @@ var render = function() {
                     { staticClass: "nav-link", attrs: { href: _vm.siteUrl } },
                     [
                       _c("i", { staticClass: "fa fa-home" }),
-                      _vm._v("\n\t\t          Home\n\t\t          "),
+                      _vm._v("\n            Home\n            "),
                       _c("span", { staticClass: "sr-only" }, [
                         _vm._v("(current)")
                       ])
@@ -65174,7 +65205,7 @@ var render = function() {
                               _vm.showLogin ? "fa-times " : "fa-user"
                             ]
                           }),
-                          _vm._v("\n\t\t          Login\n\t\t        ")
+                          _vm._v("\n            Login\n          ")
                         ]
                       )
                     ])
@@ -65215,9 +65246,9 @@ var render = function() {
                                   }
                                 }),
                             _vm._v(
-                              "\n\n\t\t          " +
+                              "\n            " +
                                 _vm._s(_vm.currentUser.firstname) +
-                                "\n\t\t        "
+                                "\n          "
                             )
                           ]
                         ),
@@ -65237,7 +65268,7 @@ var render = function() {
                               },
                               [
                                 _c("i", { staticClass: "fa fa-user" }),
-                                _vm._v(" View profile")
+                                _vm._v(" View profile\n            ")
                               ]
                             ),
                             _vm._v(" "),
@@ -65255,7 +65286,7 @@ var render = function() {
                                 _c("i", {
                                   staticClass: "fa fa-question-circle-o"
                                 }),
-                                _vm._v(" My questions")
+                                _vm._v(" My questions\n            ")
                               ]
                             ),
                             _vm._v(" "),
@@ -65275,7 +65306,7 @@ var render = function() {
                               },
                               [
                                 _c("i", { staticClass: "fa fa-sign-out" }),
-                                _vm._v(" Logout")
+                                _vm._v(" Logout\n            ")
                               ]
                             )
                           ]
@@ -65341,7 +65372,7 @@ var staticRenderFns = [
         _c("i", { staticClass: "fa fa-envelope-o" }, [
           _c("span", { staticClass: "badge badge-danger" }, [_vm._v("11")])
         ]),
-        _vm._v("\n\t\t          Messages\n\t\t        ")
+        _vm._v("\n            Messages\n          ")
       ])
     ])
   }
@@ -65630,7 +65661,7 @@ var render = function() {
                   _vm.isTheBest(answer.id)
                     ? _c("span", { staticClass: "float-left best-checked" }, [
                         _c("i", { staticClass: "fa fa-check" }),
-                        _vm._v(" Best answer\n\t\t    \t")
+                        _vm._v(" Best answer\n        ")
                       ])
                     : _vm._e(),
                   _vm._v(" "),
@@ -65654,7 +65685,9 @@ var render = function() {
                         attrs: { "aria-hidden": "true" }
                       }),
                       _vm._v(
-                        "   " + _vm._s(_vm.getAuthorName(answer, "firstname"))
+                        "\n            " +
+                          _vm._s(_vm.getAuthorName(answer, "firstname")) +
+                          "\n        "
                       )
                     ]
                   ),

@@ -87,7 +87,8 @@ export default {
             type: "success",
             html: "<h5>Your answer has been added</h5>",
             showConfirmButton: false,
-            showCancelButton: true
+            showCancelButton: false,
+            timer: 1500
           });
 
           // Add the anwer to the answers list

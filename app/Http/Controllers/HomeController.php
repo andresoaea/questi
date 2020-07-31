@@ -26,6 +26,12 @@ class HomeController extends Controller
      */
     public function index()
     {
+
+        \JavaScript::put([
+            // 'currentUser'   => Auth:: check() ? Auth::user()->makeHidden(['email', 'created_at', 'updated_at']) : false,
+             'isHome'        => true
+         ]);
+
         return view('home');
     }
 

@@ -1,6 +1,6 @@
 Vue.component("profile", require("./Profile.vue").default);
 
-Vue.component("pagination", require("laravel-vue-pagination").default);
+Vue.component("pagination", require("laravel-vue-pagination"));
 
 // const store = new Vuex.Store({
 // 	state: {}

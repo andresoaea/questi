@@ -2903,7 +2903,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 Vue.component("profile", __webpack_require__(/*! ./Profile.vue */ "./resources/js/profile/Profile.vue")["default"]);
-Vue.component("pagination", __webpack_require__(/*! laravel-vue-pagination */ "./node_modules/laravel-vue-pagination/dist/laravel-vue-pagination.common.js")["default"]); // const store = new Vuex.Store({
+Vue.component("pagination", __webpack_require__(/*! laravel-vue-pagination */ "./node_modules/laravel-vue-pagination/dist/laravel-vue-pagination.common.js")); // const store = new Vuex.Store({
 // 	state: {}
 // })
 

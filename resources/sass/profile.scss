@@ -1,163 +1,161 @@
-@import 'main';
+@import "main";
 
 #profile {
+    @import "~admin-lte/build/scss/AdminLTE-raw";
 
-	@import '~admin-lte/build/scss/AdminLTE-raw';
+    .container {
+        margin: 30px auto;
 
-	.container {
-		margin: 30px auto;
+        & > .row > div > div {
+            background-color: #fff;
+            padding: 14px;
+        }
+    }
 
-		& > .row > div > div {
-			background-color: #fff;
-			padding: 14px;
-		}
-	}
+    .user-info {
+        .widget-user-image img {
+            height: 90px;
+        }
 
-	.user-info {
+        .widget-user-header {
+            //background-size: 108% !important;
 
-		.widget-user-image img {
-			height: 90px;
-		}
+            h3,
+            h5 {
+                text-shadow: -1px -1px 3px #000;
+            }
+            h3 {
+                font-size: 24px;
+            }
+            h5 {
+                font-size: 15px;
+            }
+        }
 
-		.widget-user-header {
-			//background-size: 108% !important;
+        .user-sumar {
+            p {
+                margin-bottom: 4px;
+                font-size: 14px;
 
-			h3, h5 {
-				text-shadow: -1px -1px 3px #000;
-			}
-			h3 {
-				font-size: 24px;
-			}
-			h5 {
-				font-size: 15px;
-			}
-		}
+                span {
+                    font-weight: bold;
+                }
+            }
+        }
 
-		.user-sumar {
-			p {
-				margin-bottom: 4px;
-				font-size: 14px;
+        ul.nav {
+            margin-top: 30px;
+        }
+    }
 
-				span {
-					font-weight: bold;
-				}
-			}
-		}
+    // right column
 
-		ul.nav {
-			margin-top: 30px;
-		}
-	}
+    .section-title {
+        p {
+            color: #00686d;
+            font-size: 20px;
+        }
 
+        hr.cleared {
+            margin-top: -8px;
+        }
+    }
 
+    table:not(.user-data-table) {
+        border-collapse: separate;
+        border-spacing: 12px;
+        min-width: 70%;
 
-	// right column
+        input {
+            &::placeholder {
+                font-size: 13px;
+            }
+        }
 
-	.section-title {
-		p {
-			color: #00686d;
-			font-size: 20px;
-		}
+        tr {
+            td:first-child {
+                color: grey;
+            }
+            td:last-child {
+                padding-left: 20px;
+            }
+        }
 
-		hr.cleared {
-			margin-top: -8px;
-		}
-	}
+        .btn-delete {
+            position: absolute;
+            margin-left: 15px;
+            border-width: 2px;
+            padding: 6px 16px;
+        }
 
-	table:not(.user-data-table) {
-		border-collapse: separate;
-		border-spacing: 12px;
-		min-width: 70%;
+        .invalid-feedback {
+            display: block;
+        }
 
-		input {
-			&::placeholder {
-				font-size: 13px;
-			}
-		}
+        .upload-btn-wrapper {
+            position: relative;
+            overflow: hidden;
+            display: inline-block;
 
-		tr {
-			td:first-child {
-				color: grey;
-			}
-			td:last-child {
-				padding-left: 20px;
-			}
-		}
+            .btn {
+                border: 2px solid gray;
+                color: gray;
+                background-color: white;
+                padding: 6px 18px;
+                border-radius: 8px;
+                font-size: 16px;
+                font-weight: bold;
+            }
 
-		.btn-delete {
-			position: absolute;
-		    margin-left: 15px;
-		    border-width: 2px;
-		    padding: 6px 16px;
-		}
+            input[type="file"] {
+                font-size: 100px;
+                position: absolute;
+                left: 0;
+                top: 0;
+                opacity: 0;
+                cursor: pointer;
+            }
+        }
+    }
 
-		.invalid-feedback {
-			display: block;
-		}
+    table.user-data-table {
+        color: #5d5d5d;
+        font-size: 14px;
 
-		.upload-btn-wrapper {
-			position: relative;
-			overflow: hidden;
-			display: inline-block;
+        th {
+            border: none;
+        }
 
-			.btn {
-				border: 2px solid gray;
-				color: gray;
-				background-color: white;
-				padding: 6px 18px;
-				border-radius: 8px;
-				font-size: 16px;
-				font-weight: bold;
-			}
+        td:first-child {
+            font-size: 15px;
 
-			input[type=file] {
-				font-size: 100px;
-				position: absolute;
-				left: 0;
-				top: 0;
-				opacity: 0;
-				cursor: pointer;
-			}
-			
-		}
+            i.fa-question {
+                background: #f1f1f1;
+                padding: 3px 6px;
+                border-radius: 50%;
+                color: #7a7a7b;
+            }
+        }
+    }
 
-	}
+    table.answers-list-table {
+        font-size: 15px;
 
-	table.user-data-table {
-		color: #5d5d5d;
-		font-size: 14px;
+        tr:first-child td {
+            border: none;
+        }
 
-		th {
-			border: none;
-		}
+        td.users-image {
+            width: 140px;
 
-		td:first-child {
-			font-size: 16px;
-		}
-	}
+            img {
+                width: 40px;
+            }
 
-	table.answers-list-table {
-		font-size: 15px;
-
-		tr:first-child td {
-			border: none;
-		}
-
-		td.users-image {
-			width: 140px;
-
-			img {
-				width: 40px;
-			}
-
-			i {
-				margin-left: 5px;
-				color: #F08727;
-			}
-		}
-
-		
-	}
-
-
+            i {
+                margin-left: 5px;
+                color: #f08727;
+            }
+        }
+    }
 }
