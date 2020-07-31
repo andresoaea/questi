@@ -28,6 +28,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(Request $request)
     {
+        if (env('APP_ENV') === 'production') {
+            URL::forceSchema('https');
+        }
+
         View::share('sidebar_widgets', WidgetController::getAllData());
 
         // var_dump( WidgetController::getAllData());
