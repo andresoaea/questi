@@ -81,11 +81,11 @@ const router = new VueRouter({
 });
 
 //Customize time locale
-//moment.locale('ro');
+//moment.locale('ro');\
 
 // Register filters
 Vue.filter("relativeTime", (created, format) => {
-    return moment(created).format(format);
+    return created ? moment(created).format(format) : "Today";
 });
 
 Vue.filter("capitalize", string => {

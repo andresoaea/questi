@@ -36661,7 +36661,8 @@ body:not(.layout-fixed).layout-navbar-fixed.text-sm #profile .wrapper .main-side
 }
 
 #profile .user-info .widget-user-header h3 {
-  font-size: 24px;
+  font-size: 19px;
+  margin-bottom: 6px;
 }
 
 #profile .user-info .widget-user-header h5 {

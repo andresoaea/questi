@@ -2254,7 +2254,8 @@ __webpack_require__.r(__webpack_exports__);
       siteUrl: siteUrl,
       showLogin: false,
       currentUser: currentUser,
-      searching: false
+      searching: false,
+      isHome: isHome
     };
   },
   methods: {
@@ -65148,40 +65149,40 @@ var render = function() {
                       ])
                     ]
                   )
-                ]),
-                _vm._v(" "),
-                _vm._m(1)
+                ])
               ]),
               _vm._v(" "),
-              _c(
-                "form",
-                {
-                  staticClass: "form-inline search-form my-2 my-lg-0",
-                  on: {
-                    submit: function($event) {
-                      $event.preventDefault()
-                    }
-                  }
-                },
-                [
-                  _c("i", {
-                    class: [
-                      "fa",
-                      _vm.searching ? "fa-spinner fa-spin" : "fa-search"
-                    ]
-                  }),
-                  _vm._v(" "),
-                  _c("input", {
-                    staticClass: "form-control mr-sm-2",
-                    attrs: {
-                      type: "text",
-                      placeholder: "Search",
-                      "aria-label": "Search"
+              _vm.isHome
+                ? _c(
+                    "form",
+                    {
+                      staticClass: "form-inline search-form my-2 my-lg-0",
+                      on: {
+                        submit: function($event) {
+                          $event.preventDefault()
+                        }
+                      }
                     },
-                    on: { keyup: _vm.searchIt }
-                  })
-                ]
-              ),
+                    [
+                      _c("i", {
+                        class: [
+                          "fa",
+                          _vm.searching ? "fa-spinner fa-spin" : "fa-search"
+                        ]
+                      }),
+                      _vm._v(" "),
+                      _c("input", {
+                        staticClass: "form-control mr-sm-2",
+                        attrs: {
+                          type: "text",
+                          placeholder: "Search",
+                          "aria-label": "Search"
+                        },
+                        on: { keyup: _vm.searchIt }
+                      })
+                    ]
+                  )
+                : _vm._e(),
               _vm._v(" "),
               _c("ul", { staticClass: "navbar-nav float-right" }, [
                 !_vm.currentUser
@@ -65362,19 +65363,6 @@ var staticRenderFns = [
       },
       [_c("span", { staticClass: "navbar-toggler-icon" })]
     )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("li", { staticClass: "nav-item" }, [
-      _c("a", { staticClass: "nav-link", attrs: { href: "#" } }, [
-        _c("i", { staticClass: "fa fa-envelope-o" }, [
-          _c("span", { staticClass: "badge badge-danger" }, [_vm._v("11")])
-        ]),
-        _vm._v("\n            Messages\n          ")
-      ])
-    ])
   }
 ]
 render._withStripped = true
@@ -83331,11 +83319,11 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_4__["default"]({
   routes: routes // short for `routes: routes`
 
 }); //Customize time locale
-//moment.locale('ro');
+//moment.locale('ro');\
 // Register filters
 
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.filter("relativeTime", function (created, format) {
-  return moment__WEBPACK_IMPORTED_MODULE_2___default()(created).format(format);
+  return created ? moment__WEBPACK_IMPORTED_MODULE_2___default()(created).format(format) : "Today";
 });
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.filter("capitalize", function (string) {
   return string.charAt(0).toUpperCase() + string.slice(1);

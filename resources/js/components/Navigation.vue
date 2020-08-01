@@ -27,17 +27,17 @@
               <span class="sr-only">(current)</span>
             </a>
           </li>
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a class="nav-link" href="#">
               <i class="fa fa-envelope-o">
                 <span class="badge badge-danger">11</span>
               </i>
               Messages
             </a>
-          </li>
+          </li>-->
         </ul>
 
-        <form @submit.prevent class="form-inline search-form my-2 my-lg-0">
+        <form v-if="isHome" @submit.prevent class="form-inline search-form my-2 my-lg-0">
           <i :class="['fa', searching ? 'fa-spinner fa-spin' : 'fa-search']"></i>
           <input
             @keyup="searchIt"
@@ -119,7 +119,8 @@ export default {
       siteUrl: siteUrl,
       showLogin: false,
       currentUser: currentUser,
-      searching: false
+      searching: false,
+      isHome: isHome
     };
   },
   methods: {

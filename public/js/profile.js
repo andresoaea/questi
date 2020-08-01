@@ -624,6 +624,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -632,7 +640,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   computed: {
     user: function user() {
-      return this.getProperty('user');
+      return this.getProperty("user");
     }
   },
   mounted: function mounted() {
@@ -646,12 +654,12 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
 
       var page = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 1;
-      axios.get(siteUrl + '/api/profile/data/questions?page=' + page).then(function (response) {
+      axios.get(siteUrl + "/api/profile/data/questions?page=" + page).then(function (response) {
         _this.questionsData = response.data;
       });
     },
     questionLink: function questionLink(slug, categorySlug) {
-      return siteUrl + '/' + categorySlug + '/' + slug;
+      return siteUrl + "/" + categorySlug + "/" + slug;
     }
   } // created() {
   // 	axios.get(siteUrl + '/api/profile/data/questions?page=1')
@@ -2022,7 +2030,7 @@ var render = function() {
         ]),
         _vm._v(" "),
         _c("span", { staticClass: "float-right" }, [
-          _vm._v(" Total: " + _vm._s(_vm.getProperty("questionsCount")))
+          _vm._v("Total: " + _vm._s(_vm.getProperty("questionsCount")))
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "clearfix" }),
@@ -2030,106 +2038,112 @@ var render = function() {
         _c("hr", { staticClass: "cleared" })
       ]),
       _vm._v(" "),
-      _c("table", { staticClass: "table user-data-table" }, [
-        _c(
-          "tbody",
-          [
-            _vm._m(0),
-            _vm._v(" "),
-            _vm._l(_vm.questionsData.data, function(question) {
-              return _c("tr", [
-                _c("td", [
-                  _c(
-                    "a",
-                    {
-                      attrs: {
-                        href: _vm.questionLink(
-                          question.slug,
-                          question.category_slug
-                        ),
-                        target: "_blank"
-                      }
-                    },
-                    [
-                      _c("i", {
-                        staticClass: "fa fa-question",
-                        attrs: { "aria-hidden": "true" }
-                      }),
-                      _vm._v(" " + _vm._s(question.title))
-                    ]
-                  )
-                ]),
+      _vm.getProperty("questionsCount") !== 0
+        ? _c("table", { staticClass: "table user-data-table" }, [
+            _c(
+              "tbody",
+              [
+                _vm._m(0),
                 _vm._v(" "),
-                _c("td", [
-                  _vm._v(
-                    "\n                  \t" +
-                      _vm._s(
-                        _vm._f("relativeTime")(
-                          question.created_at,
-                          "D MMM YYYY"
-                        )
-                      ) +
-                      "\n                "
-                  )
-                ]),
-                _vm._v(" "),
-                _c("td", [
-                  _c(
-                    "span",
-                    {
-                      class: [
-                        "badge",
-                        question.answers_count > 0 ? "bg-success" : "bg-warning"
-                      ]
-                    },
-                    [
-                      _vm._v(
-                        "\n                \t\t" +
-                          _vm._s(question.answers_count) +
-                          " "
-                      ),
-                      _c("i", {
-                        staticClass: "fa fa-reply",
-                        attrs: { "aria-hidden": "true" }
-                      })
-                    ]
-                  )
-                ]),
-                _vm._v(" "),
-                question.best_answer
-                  ? _c("td", [_vm._m(1, true)])
-                  : _c("td", [_vm._m(2, true)]),
-                _vm._v(" "),
-                _c("td", [
-                  _c(
-                    "a",
-                    {
-                      attrs: {
-                        href: _vm.questionLink(
-                          question.slug,
-                          question.category_slug
-                        ),
-                        target: "_blank"
-                      }
-                    },
-                    [
+                _vm._l(_vm.questionsData.data, function(question) {
+                  return _c("tr", [
+                    _c("td", [
                       _c(
-                        "button",
+                        "a",
                         {
-                          staticClass: "btn btn-outline-primary btn-sm",
-                          attrs: { type: "button" }
+                          attrs: {
+                            href: _vm.questionLink(
+                              question.slug,
+                              question.category_slug
+                            ),
+                            target: "_blank"
+                          }
                         },
-                        [_vm._v("View / Edit")]
+                        [
+                          _c("i", {
+                            staticClass: "fa fa-question",
+                            attrs: { "aria-hidden": "true" }
+                          }),
+                          _vm._v(
+                            "\n            " +
+                              _vm._s(question.title) +
+                              "\n          "
+                          )
+                        ]
                       )
-                    ]
-                  )
-                ])
-              ])
-            })
-          ],
-          2
-        )
-      ]),
+                    ]),
+                    _vm._v(" "),
+                    _c("td", [
+                      _vm._v(
+                        _vm._s(
+                          _vm._f("relativeTime")(
+                            question.created_at,
+                            "D MMM YYYY"
+                          )
+                        )
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("td", [
+                      _c(
+                        "span",
+                        {
+                          class: [
+                            "badge",
+                            question.answers_count > 0
+                              ? "bg-success"
+                              : "bg-warning"
+                          ]
+                        },
+                        [
+                          _vm._v(
+                            "\n            " +
+                              _vm._s(question.answers_count) +
+                              "\n            "
+                          ),
+                          _c("i", {
+                            staticClass: "fa fa-reply",
+                            attrs: { "aria-hidden": "true" }
+                          })
+                        ]
+                      )
+                    ]),
+                    _vm._v(" "),
+                    question.best_answer
+                      ? _c("td", [_vm._m(1, true)])
+                      : _c("td", [_vm._m(2, true)]),
+                    _vm._v(" "),
+                    _c("td", [
+                      _c(
+                        "a",
+                        {
+                          attrs: {
+                            href: _vm.questionLink(
+                              question.slug,
+                              question.category_slug
+                            ),
+                            target: "_blank"
+                          }
+                        },
+                        [
+                          _c(
+                            "button",
+                            {
+                              staticClass: "btn btn-outline-primary btn-sm",
+                              attrs: { type: "button" }
+                            },
+                            [_vm._v("View / Edit")]
+                          )
+                        ]
+                      )
+                    ])
+                  ])
+                })
+              ],
+              2
+            )
+          ])
+        : _c("small", [_vm._v("No questions yet")]),
       _vm._v(" "),
       _c("pagination", {
         staticClass: "float-right",
@@ -2168,7 +2182,7 @@ var staticRenderFns = [
         staticClass: "fa fa-check-circle-o",
         attrs: { "aria-hidden": "true" }
       }),
-      _vm._v(" Solved")
+      _vm._v(" Solved\n          ")
     ])
   },
   function() {
@@ -2177,7 +2191,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("p", { staticClass: "text-danger" }, [
       _c("i", { staticClass: "fa fa-check", attrs: { "aria-hidden": "true" } }),
-      _vm._v(" In progress")
+      _vm._v(" In progress\n          ")
     ])
   }
 ]
