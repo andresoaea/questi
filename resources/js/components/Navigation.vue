@@ -79,6 +79,14 @@
                 <i class="fa fa-question-circle-o"></i> My questions
               </a>
               <div class="dropdown-divider"></div>
+              <a class="dropdown-item" :href="`${siteUrl}/profile/answers`">
+                <i class="fa fa-reply-all"></i> My answers
+              </a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" :href="`${siteUrl}/profile/change-password`">
+                <i class="fa fa-key"></i> Change password
+              </a>
+              <div class="dropdown-divider"></div>
               <a class="dropdown-item" :href="`${siteUrl}/logout`" @click.prevent="logout">
                 <i class="fa fa-sign-out"></i> Logout
               </a>

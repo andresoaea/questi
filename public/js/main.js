@@ -2238,6 +2238,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -2419,6 +2427,7 @@ __webpack_require__.r(__webpack_exports__);
       return "Added on: " + this.$options.filters.relativeTime(time, "LLLL");
     },
     answerText: function answerText(number) {
+      console.log(number);
       return number === 0 ? "Answer first" : "Answer";
     },
     updateAllData: function updateAllData(data) {
@@ -65297,6 +65306,38 @@ var render = function() {
                               "a",
                               {
                                 staticClass: "dropdown-item",
+                                attrs: {
+                                  href: _vm.siteUrl + "/profile/answers"
+                                }
+                              },
+                              [
+                                _c("i", { staticClass: "fa fa-reply-all" }),
+                                _vm._v(" My answers\n            ")
+                              ]
+                            ),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "dropdown-divider" }),
+                            _vm._v(" "),
+                            _c(
+                              "a",
+                              {
+                                staticClass: "dropdown-item",
+                                attrs: {
+                                  href: _vm.siteUrl + "/profile/change-password"
+                                }
+                              },
+                              [
+                                _c("i", { staticClass: "fa fa-key" }),
+                                _vm._v(" Change password\n            ")
+                              ]
+                            ),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "dropdown-divider" }),
+                            _vm._v(" "),
+                            _c(
+                              "a",
+                              {
+                                staticClass: "dropdown-item",
                                 attrs: { href: _vm.siteUrl + "/logout" },
                                 on: {
                                   click: function($event) {
@@ -65572,7 +65613,7 @@ var render = function() {
                   _c("span", { staticClass: "answer mr0 float-right" }, [
                     _vm._v(
                       "\n            " +
-                        _vm._s(_vm.answerText(question.answers_num)) +
+                        _vm._s(_vm.answerText(question.answers_count)) +
                         "\n            "
                     ),
                     _c("i", {

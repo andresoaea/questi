@@ -61,7 +61,7 @@
             rel="bookmark"
           >
             <span class="answer mr0 float-right">
-              {{ answerText(question.answers_num) }}
+              {{ answerText(question.answers_count) }}
               <i class="fa fa-share" aria-hidden="true"></i>
             </span>
           </a>
@@ -116,6 +116,7 @@ export default {
       return "Added on: " + this.$options.filters.relativeTime(time, "LLLL");
     },
     answerText: function(number) {
+      console.log(number);
       return number === 0 ? "Answer first" : "Answer";
     },
     updateAllData: function(data) {

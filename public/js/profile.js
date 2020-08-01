@@ -130,6 +130,17 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -138,7 +149,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   computed: {
     user: function user() {
-      return this.getProperty('user');
+      return this.getProperty("user");
     }
   },
   mounted: function mounted() {
@@ -152,16 +163,16 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
 
       var page = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 1;
-      axios.get(siteUrl + '/api/profile/data/answers?page=' + page).then(function (response) {
+      axios.get(siteUrl + "/api/profile/data/answers?page=" + page).then(function (response) {
         _this.answersData = response.data;
       });
     },
     getFullName: function getFullName(user) {
-      return user.firstname + ' ' + (user.lastname || '');
+      return user.firstname + " " + (user.lastname || "");
     },
     answerLink: function answerLink(answer) {
       var question = answer.related_question;
-      return siteUrl + '/' + question.category_slug + '/' + question.slug + '#answer' + answer.id;
+      return siteUrl + "/" + question.category_slug + "/" + question.slug + "#answer" + answer.id;
     }
   }
 });
@@ -1377,11 +1388,11 @@ var render = function() {
     [
       _c("header", { staticClass: "section-title" }, [
         _c("p", { staticClass: "float-left" }, [
-          _vm._v(_vm._s(_vm.user.firstname) + " user answers")
+          _vm._v(_vm._s(_vm.user.firstname) + "'s answers")
         ]),
         _vm._v(" "),
         _c("span", { staticClass: "float-right" }, [
-          _vm._v(" Total: " + _vm._s(_vm.getProperty("answersCount")))
+          _vm._v("Total: " + _vm._s(_vm.getProperty("answersCount")))
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "clearfix" }),
