@@ -26,10 +26,11 @@
           </td>
           <td>{{ question.created_at | relativeTime('D MMM YYYY') }}</td>
           <td>
-            <span :class="['badge', question.answers_count > 0 ? 'bg-success' : 'bg-warning']">
+            <!-- <span :class="['badge', question.answers_count > 0 ? 'bg-success' : 'bg-warning']">
               {{ question.answers_count }}
               <i aria-hidden="true" class="fa fa-reply"></i>
-            </span>
+            </span>-->
+            <span>{{ question.answers_count }}</span>
           </td>
           <td v-if="question.best_answer">
             <p class="text-success">
@@ -43,7 +44,19 @@
           </td>
           <td>
             <a :href="questionLink(question.slug, question.category_slug)" target="_blank">
-              <button type="button" class="btn btn-outline-primary btn-sm">View / Edit</button>
+              <button type="button" class="btn btn-success btn-sm">
+                <i class="fa fa-eye" aria-hidden="true"></i>
+              </button>
+            </a>
+            <a :href="questionLink(question.slug, question.category_slug)" target="_blank">
+              <button type="button" class="btn btn-primary btn-sm">
+                <i class="fa fa-pencil" aria-hidden="true"></i>
+              </button>
+            </a>
+            <a :href="questionLink(question.slug, question.category_slug)" target="_blank">
+              <button type="button" class="btn btn-danger btn-sm">
+                <i class="fa fa-trash-o" aria-hidden="true"></i>
+              </button>
             </a>
           </td>
         </tr>

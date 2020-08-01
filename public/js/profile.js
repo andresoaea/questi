@@ -643,6 +643,19 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2096,28 +2109,7 @@ var render = function() {
                     ]),
                     _vm._v(" "),
                     _c("td", [
-                      _c(
-                        "span",
-                        {
-                          class: [
-                            "badge",
-                            question.answers_count > 0
-                              ? "bg-success"
-                              : "bg-warning"
-                          ]
-                        },
-                        [
-                          _vm._v(
-                            "\n            " +
-                              _vm._s(question.answers_count) +
-                              "\n            "
-                          ),
-                          _c("i", {
-                            staticClass: "fa fa-reply",
-                            attrs: { "aria-hidden": "true" }
-                          })
-                        ]
-                      )
+                      _c("span", [_vm._v(_vm._s(question.answers_count))])
                     ]),
                     _vm._v(" "),
                     question.best_answer
@@ -2136,16 +2128,35 @@ var render = function() {
                             target: "_blank"
                           }
                         },
-                        [
-                          _c(
-                            "button",
-                            {
-                              staticClass: "btn btn-outline-primary btn-sm",
-                              attrs: { type: "button" }
-                            },
-                            [_vm._v("View / Edit")]
-                          )
-                        ]
+                        [_vm._m(3, true)]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "a",
+                        {
+                          attrs: {
+                            href: _vm.questionLink(
+                              question.slug,
+                              question.category_slug
+                            ),
+                            target: "_blank"
+                          }
+                        },
+                        [_vm._m(4, true)]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "a",
+                        {
+                          attrs: {
+                            href: _vm.questionLink(
+                              question.slug,
+                              question.category_slug
+                            ),
+                            target: "_blank"
+                          }
+                        },
+                        [_vm._m(5, true)]
                       )
                     ])
                   ])
@@ -2204,6 +2215,46 @@ var staticRenderFns = [
       _c("i", { staticClass: "fa fa-check", attrs: { "aria-hidden": "true" } }),
       _vm._v(" In progress\n          ")
     ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "button",
+      { staticClass: "btn btn-success btn-sm", attrs: { type: "button" } },
+      [_c("i", { staticClass: "fa fa-eye", attrs: { "aria-hidden": "true" } })]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "button",
+      { staticClass: "btn btn-primary btn-sm", attrs: { type: "button" } },
+      [
+        _c("i", {
+          staticClass: "fa fa-pencil",
+          attrs: { "aria-hidden": "true" }
+        })
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "button",
+      { staticClass: "btn btn-danger btn-sm", attrs: { type: "button" } },
+      [
+        _c("i", {
+          staticClass: "fa fa-trash-o",
+          attrs: { "aria-hidden": "true" }
+        })
+      ]
+    )
   }
 ]
 render._withStripped = true

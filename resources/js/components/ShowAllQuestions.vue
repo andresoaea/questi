@@ -116,7 +116,6 @@ export default {
       return "Added on: " + this.$options.filters.relativeTime(time, "LLLL");
     },
     answerText: function(number) {
-      console.log(number);
       return number === 0 ? "Answer first" : "Answer";
     },
     updateAllData: function(data) {

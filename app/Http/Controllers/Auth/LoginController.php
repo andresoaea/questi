@@ -76,18 +76,22 @@ class LoginController extends Controller
 
 
 
-    // public function showLoginForm()
-    // {
-    //     if(!session()->has('from')){
-    //         session()->put('from', url()->previous());
-    //     }
+    public function showLoginForm()
+    {
+
+        // if(!session()->has('from')){
+        //     session()->put('from', url()->previous());
+        // }
 
 
-    //     // var_dump(URL::previous());
-    //     // die();
+        // var_dump(URL::previous());
+        // die();
+        \JavaScript::put([
+            'showLoginFormFromController' => true
+        ]);
 
-    //     return view('auth.login');
-    // }
+        return view('home');
+    }
 
 
     // public function authenticated($request,$user)

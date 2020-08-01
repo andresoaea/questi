@@ -36766,8 +36766,12 @@ body:not(.layout-fixed).layout-navbar-fixed.text-sm #profile .wrapper .main-side
   border: none;
 }
 
+#profile table.user-data-table td {
+  font-size: 12px;
+}
+
 #profile table.user-data-table td:first-child {
-  font-size: 15px;
+  font-size: 14px;
 }
 
 #profile table.user-data-table td:first-child i.fa-question {
@@ -36775,6 +36779,10 @@ body:not(.layout-fixed).layout-navbar-fixed.text-sm #profile .wrapper .main-side
   padding: 3px 6px;
   border-radius: 50%;
   color: #7a7a7b;
+}
+
+#profile table.user-data-table td:last-child {
+  min-width: 122px;
 }
 
 #profile table.answers-list-table {

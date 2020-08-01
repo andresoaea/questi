@@ -104,7 +104,7 @@ class ProfileController extends Controller
         $user = auth('api')->user();
      
         $request_data = $request->all();
-        $validator = $this->adminAredentialRules($request_data);
+        $validator = $this->adminCredentialRules($request_data);
         if($validator->fails())
         {
             return response()->json(['errors' => $validator->getMessageBag()->toArray()], 422);
@@ -196,7 +196,7 @@ class ProfileController extends Controller
     }
 
 
-    protected function adminAredentialRules(array $data)
+    protected function adminCredentialRules(array $data)
     {
       $messages = [
         'current_password.required'      => 'Please enter current password',

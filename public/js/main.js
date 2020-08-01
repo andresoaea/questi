@@ -2260,7 +2260,7 @@ __webpack_require__.r(__webpack_exports__);
     return {
       csrfToken: "",
       siteUrl: siteUrl,
-      showLogin: false,
+      showLogin: typeof showLoginFormFromController !== "undefined" ? showLoginFormFromController : false,
       currentUser: currentUser,
       searching: false,
       isHome: isHome
@@ -2427,7 +2427,6 @@ __webpack_require__.r(__webpack_exports__);
       return "Added on: " + this.$options.filters.relativeTime(time, "LLLL");
     },
     answerText: function answerText(number) {
-      console.log(number);
       return number === 0 ? "Answer first" : "Answer";
     },
     updateAllData: function updateAllData(data) {

@@ -127,14 +127,22 @@
             border: none;
         }
 
-        td:first-child {
-            font-size: 15px;
+        td {
+            font-size: 12px;
 
-            i.fa-question {
-                background: #f1f1f1;
-                padding: 3px 6px;
-                border-radius: 50%;
-                color: #7a7a7b;
+            &:first-child {
+                font-size: 14px;
+
+                i.fa-question {
+                    background: #f1f1f1;
+                    padding: 3px 6px;
+                    border-radius: 50%;
+                    color: #7a7a7b;
+                }
+            }
+
+            &:last-child {
+                min-width: 122px;
             }
         }
     }

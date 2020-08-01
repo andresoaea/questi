@@ -125,7 +125,10 @@ export default {
     return {
       csrfToken: "",
       siteUrl: siteUrl,
-      showLogin: false,
+      showLogin:
+        typeof showLoginFormFromController !== "undefined"
+          ? showLoginFormFromController
+          : false,
       currentUser: currentUser,
       searching: false,
       isHome: isHome
