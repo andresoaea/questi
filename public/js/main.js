@@ -83370,6 +83370,7 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.filter("capitalize", function (string
 });
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.filter("setImageSrc", function (image) {
   var type = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : "default";
+  if (!image) return;
   var filePath = type === "default" ? "/images/defaults/" : "/image-storage/" + type + "/small-";
   var base = !image.includes("https://graph.facebook.com") ? siteUrl + filePath : "";
   return base + image;

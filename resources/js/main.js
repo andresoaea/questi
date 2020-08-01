@@ -93,6 +93,8 @@ Vue.filter("capitalize", string => {
 });
 
 Vue.filter("setImageSrc", (image, type = "default") => {
+    if (!image) return;
+
     let filePath =
         type === "default"
             ? "/images/defaults/"
