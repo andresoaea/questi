@@ -6,7 +6,9 @@ use URL;
 use View;
 use JavaScript;
 use Illuminate\Http\Request;
+use Illuminate\Routing\UrlGenerator;
 use Illuminate\Support\ServiceProvider;
+
 use App\Http\Controllers\WidgetController;
 
 class AppServiceProvider extends ServiceProvider
@@ -26,11 +28,11 @@ class AppServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function boot(Request $request)
+    public function boot(Request $request, UrlGenerator $url)
     {
-        // if($this->app->environment('production')) {
-        //     \URL::forceScheme('https');
-        // }
+        if (env('APP_ENV') !== 'local') {
+            $url->forceScheme('https');
+        }
 
         view()->composer('*', function($view){
             $view_name = str_replace('.', '-', $view->getName());
