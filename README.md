@@ -2,6 +2,10 @@
 
 ###### Built on Laravel 7 + Vue
 
+###### Deplyed on Heroku - DEMO:
+
+[https://questi-qa.herokuapp.com/](https://questi-qa.herokuapp.com/)
+
 ##### Features:
 
 -   Authentication:
