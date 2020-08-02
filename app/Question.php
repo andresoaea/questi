@@ -14,6 +14,11 @@ class Question extends Model
     ];
 
 
+    public function user() {
+        return $this->belongsTo('App\User', 'author', 'id');
+    }
+
+
     public function answersCount() 
     {
     	 return Answer::whereFor($this->id)->count();
