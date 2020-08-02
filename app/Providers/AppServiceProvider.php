@@ -32,6 +32,11 @@ class AppServiceProvider extends ServiceProvider
         //     \URL::forceScheme('https');
         // }
 
+        view()->composer('*', function($view){
+            $view_name = str_replace('.', '-', $view->getName());
+            view()->share('view_name', $view_name);
+        });
+
         View::share('sidebar_widgets', WidgetController::getAllData());
 
         // var_dump( WidgetController::getAllData());

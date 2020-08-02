@@ -67,6 +67,8 @@ Vue.component(
     require("./components/ShowSingleAnswer.vue").default
 );
 
+Vue.component("sign-in-box", require("./components/SignInBox.vue").default);
+
 let routes = [
     {
         path: "/",

@@ -27,7 +27,8 @@
       </form>
     </div>
     <div v-else>
-      <div class="answer-form-container">
+      <sign-in-box scope="answer"></sign-in-box>
+      <!-- <div class="answer-form-container">
         <div class="user-placeholder">
           <img src="https://cdn4.iconfinder.com/data/icons/green-shopper/1068/user.png" />
         </div>
@@ -49,7 +50,7 @@
           </div>
         </div>
         <div class="clearfix"></div>
-      </div>
+      </div>-->
     </div>
   </div>
 </template>
@@ -113,9 +114,6 @@ export default {
             });
           }
         });
-    },
-    showLogin: function() {
-      bus.$emit("showLogin", true);
     }
   }
 };
