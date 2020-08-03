@@ -130,10 +130,13 @@ export default {
     };
   },
   created() {
-    console.log(this.$route.path);
+    let type = this.$route.path.replace("/", "");
+    let url =
+      this.$route.path === "/" ? "get-questions" : `get-questions?type=${type}`;
+
     this.isLoading = true;
 
-    axios.get("get-questions").then(response => {
+    axios.get(url).then(response => {
       setTimeout(() => {
         this.isLoading = false;
         this.updateAllData(response.data);
@@ -144,9 +147,6 @@ export default {
       this.searchQuery = data.searchQuery;
       this.updateAllData(data.questionsData);
     });
-  },
-  beforeRouteUpdate() {
-    console.log("bfr");
   },
   methods: {
     fullQuestionUrl: function(category, slug) {

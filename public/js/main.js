@@ -2484,9 +2484,10 @@ __webpack_require__.r(__webpack_exports__);
   created: function created() {
     var _this = this;
 
-    console.log(this.$route.path);
+    var type = this.$route.path.replace("/", "");
+    var url = this.$route.path === "/" ? "get-questions" : "get-questions?type=".concat(type);
     this.isLoading = true;
-    axios.get("get-questions").then(function (response) {
+    axios.get(url).then(function (response) {
       setTimeout(function () {
         _this.isLoading = false;
 
@@ -2498,9 +2499,6 @@ __webpack_require__.r(__webpack_exports__);
 
       _this.updateAllData(data.questionsData);
     });
-  },
-  beforeRouteUpdate: function beforeRouteUpdate() {
-    console.log("bfr");
   },
   methods: {
     fullQuestionUrl: function fullQuestionUrl(category, slug) {

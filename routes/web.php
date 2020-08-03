@@ -28,7 +28,7 @@ Route::get('/{url}', 'HomeController@index')
     ->name('home');
 
 
-Route::get('get-questions', 'HomeController@getQuestions');
+Route::get('get-questions', 'QuestionController@getQuestions');
 
 Route::get('add-question', 'QuestionController@create')->name('addQuestion');
 Route::post('save-question', 'QuestionController@store')->name('saveQuestion');

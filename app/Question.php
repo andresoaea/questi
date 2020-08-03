@@ -18,6 +18,10 @@ class Question extends Model
         return $this->belongsTo('App\User', 'author', 'id');
     }
 
+    public function answers() {
+        return $this->hasMany('App\Answer', 'for', 'id');
+    }
+
 
     public function answersCount() 
     {
