@@ -160,17 +160,18 @@ class QuestionController extends Controller
                             ->paginate(20)
                             ->toArray();
 
-            //  foreach ($questions_resource as $q) {
-            //     echo $q->id . "\n";
-            //     echo $q->answers_count . "\n";
-            //     echo  "--------- \n";
-            // }
-
-         return $this->sendResponse($questions_resource);
+            return $this->sendResponse($questions_resource);
         } 
 
         if($type === 'without-answer') {
-            return '0 ans';
+            $questions_resource = Question::with('answers')                 
+                            ->orderBy('created_at', 'desc')   
+                            ->withCount('answers')
+                            ->having('answers_count', '=', 0)
+                            ->paginate(20)
+                            ->toArray();
+
+            return $this->sendResponse($questions_resource);
         }
     }
 
