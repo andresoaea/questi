@@ -65,10 +65,23 @@ Vue.component(
 
 Vue.component("sign-in-box", require("./components/SignInBox.vue").default);
 
+import ShowAllQuestions from "./components/ShowAllQuestions.vue";
+
 let routes = [
     {
         path: "/",
-        component: require("./components/ShowAllQuestions.vue").default
+        //component: require("./components/ShowAllQuestions.vue").default
+        component: ShowAllQuestions
+    },
+    {
+        path: "/most-answered",
+        component: ShowAllQuestions
+        // meta: { reuse: false }
+    },
+    {
+        path: "/without-answer",
+        component: ShowAllQuestions
+        // meta: { reuse: false }
     }
 ];
 

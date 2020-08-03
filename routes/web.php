@@ -15,7 +15,19 @@
 Auth::routes();
 
 // Home routes
+
+// Route::get('/{url}', function ($url) {
+
+//     return Redirect::to('/');
+
+// })->where(['url' => 'url1|url2|url3']);
+
 Route::get('/', 'HomeController@index')->name('home');
+Route::get('/{url}', 'HomeController@index')
+    ->where(['url' => '/|most-answered|without-answer'])
+    ->name('home');
+
+
 Route::get('get-questions', 'HomeController@getQuestions');
 
 Route::get('add-question', 'QuestionController@create')->name('addQuestion');

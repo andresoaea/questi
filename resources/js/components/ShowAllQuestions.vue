@@ -1,28 +1,23 @@
 <template>
   <div>
-    <ul class="nav nav-tabs questions-list-nav-tabs">
-      <li class="nav-item">
-        <a class="nav-link active" href="#">Recent questions</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Most answered</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Without answer</a>
-      </li>
-    </ul>
+    <questions-nav-tabs></questions-nav-tabs>
+
+    <div class="vld-parent questions-preloader">
+      <loading :active.sync="isLoading" :is-full-page="false" color="#f08727"></loading>
+    </div>
 
     <h4 v-if="searchQuery && questions.length > 0">Search results for: {{ searchQuery }}</h4>
     <h4 v-if="searchQuery && questions.length === 0">No results for: {{ searchQuery }}</h4>
     <h4 v-if="!searchQuery && questions.length === 0">No questions on this site yet</h4>
 
-    <!-- {{ searchQuery.length }} -->
-
     <article v-for="question in questions" class="question">
       <div class="user-image">
         <img
           v-if="authors[questionAuthorIds[question.id]]['picture']"
-          :src="authors[questionAuthorIds[question.id]]['picture'] | setImageSrc('profile')"
+          :src="
+                        authors[questionAuthorIds[question.id]]['picture']
+                            | setImageSrc('profile')
+                    "
         />
         <img v-else :src="'user-placeholder.svg' | setImageSrc" />
       </div>
@@ -30,17 +25,33 @@
         <header>
           <span class="badge badge-pill badge-success">
             <i class="fa fa-star-o" aria-hidden="true"></i>
-            &nbsp; {{ authors[questionAuthorIds[question.id]]['role'] | capitalize }}
+            &nbsp;
+            {{
+            authors[questionAuthorIds[question.id]]["role"]
+            | capitalize
+            }}
           </span>
-          <span class="badge badge-pill badge-warning">
+          <span class="badge badge-pill badge-warning badge-category">
             <i class="fa fa-folder-open-o" aria-hidden="true"></i>
-            &nbsp; {{ categories[question.category] ? categories[question.category]['name'] : 'Uncategorized' }}
+            &nbsp;
+            {{
+            categories[question.category]
+            ? categories[question.category]["name"]
+            : "Uncategorized"
+            }}
           </span>
         </header>
 
         <h1>
           <a
-            :href="fullQuestionUrl(categories[question.category] ? categories[question.category]['slug'] : 'uncategorized', question.slug)"
+            :href="
+                            fullQuestionUrl(
+                                categories[question.category]
+                                    ? categories[question.category]['slug']
+                                    : 'uncategorized',
+                                question.slug
+                            )
+                        "
             rel="bookmark"
           >{{ question.title }}</a>
         </h1>
@@ -55,12 +66,13 @@
 
           <span v-tooltip:top="fullnameTooltip(question)" class="float-left">
             <i class="fa fa-user-o" aria-hidden="true"></i>
-            &nbsp; {{ getAuthorName(question, 'firstname') }}
+            &nbsp; {{ getAuthorName(question, "firstname") }}
           </span>
 
           <span v-tooltip:top="addedFullTime(question.created_at)" class="float-left">
             <i class="fa fa-calendar" aria-hidden="true"></i>
-            &nbsp; {{ question.created_at | relativeTime('Do MMMM') }}
+            &nbsp;
+            {{ question.created_at | relativeTime("Do MMMM") }}
           </span>
 
           <span class="float-left">
@@ -69,7 +81,14 @@
           </span>
 
           <a
-            :href="fullQuestionUrl(categories[question.category] ? categories[question.category]['slug'] : 'uncategorized', question.slug)"
+            :href="
+                            fullQuestionUrl(
+                                categories[question.category]
+                                    ? categories[question.category]['slug']
+                                    : 'uncategorized',
+                                question.slug
+                            )
+                        "
             rel="bookmark"
           >
             <span class="answer mr0 float-right">
@@ -86,9 +105,19 @@
 
 <script>
 import { bus } from "../main";
+import QuestionsNavTabs from "./QuestionsNavTabs.vue";
+
+// Import component
+import Loading from "vue-loading-overlay";
+// Import stylesheet
+import "vue-loading-overlay/dist/vue-loading.css";
 
 export default {
   name: "ShowAllQuestions",
+  components: {
+    QuestionsNavTabs,
+    Loading
+  },
   data() {
     return {
       questions: {},
@@ -96,18 +125,28 @@ export default {
       categories: {},
       authors: {},
       siteUrl: siteUrl,
-      searchQuery: ""
+      searchQuery: "",
+      isLoading: false
     };
   },
   created() {
+    console.log(this.$route.path);
+    this.isLoading = true;
+
     axios.get("get-questions").then(response => {
-      this.updateAllData(response.data);
+      setTimeout(() => {
+        this.isLoading = false;
+        this.updateAllData(response.data);
+      }, 600);
     });
 
     bus.$on("updateQuestions", data => {
       this.searchQuery = data.searchQuery;
       this.updateAllData(data.questionsData);
     });
+  },
+  beforeRouteUpdate() {
+    console.log("bfr");
   },
   methods: {
     fullQuestionUrl: function(category, slug) {

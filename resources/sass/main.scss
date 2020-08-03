@@ -56,11 +56,24 @@ body {
         margin-bottom: 30px;
         border-bottom: 2px solid #f08727;
 
-        li > .nav-link.active {
+        li > .nav-link.router-link-active {
             background-color: #f08727;
             color: #fff;
 
             border-color: transparent;
+        }
+    }
+
+    .questions-preloader {
+        position: relative;
+
+        .vld-overlay {
+            position: relative;
+            margin-top: 70px;
+
+            .vld-background {
+                background: transparent;
+            }
         }
     }
 }
@@ -110,7 +123,7 @@ body {
                     text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.3);
 
                     &.badge-warning {
-                        background-color: #d8a200;
+                        background-color: #f08727;
                     }
                 }
             }
