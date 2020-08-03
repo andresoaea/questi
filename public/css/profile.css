@@ -14606,6 +14606,17 @@ body .popover .popover-body button {
   color: #2f3239;
 }
 
+.home-questions .questions-list-nav-tabs {
+  margin-bottom: 30px;
+  border-bottom: 2px solid #f08727;
+}
+
+.home-questions .questions-list-nav-tabs li > .nav-link.active {
+  background-color: #f08727;
+  color: #fff;
+  border-color: transparent;
+}
+
 .home-questions .question,
 .home-questions .answer-wrp,
 .single-question .question,

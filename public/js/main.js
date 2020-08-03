@@ -2388,6 +2388,18 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "ShowAllQuestions",
@@ -65481,6 +65493,8 @@ var render = function() {
   return _c(
     "div",
     [
+      _vm._m(0),
+      _vm._v(" "),
       _vm.searchQuery && _vm.questions.length > 0
         ? _c("h4", [_vm._v("Search results for: " + _vm._s(_vm.searchQuery))])
         : _vm._e(),
@@ -65684,7 +65698,32 @@ var render = function() {
     2
   )
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("ul", { staticClass: "nav nav-tabs questions-list-nav-tabs" }, [
+      _c("li", { staticClass: "nav-item" }, [
+        _c("a", { staticClass: "nav-link active", attrs: { href: "#" } }, [
+          _vm._v("Recent questions")
+        ])
+      ]),
+      _vm._v(" "),
+      _c("li", { staticClass: "nav-item" }, [
+        _c("a", { staticClass: "nav-link", attrs: { href: "#" } }, [
+          _vm._v("Most answered")
+        ])
+      ]),
+      _vm._v(" "),
+      _c("li", { staticClass: "nav-item" }, [
+        _c("a", { staticClass: "nav-link", attrs: { href: "#" } }, [
+          _vm._v("Without answer")
+        ])
+      ])
+    ])
+  }
+]
 render._withStripped = true
 
 
@@ -83447,15 +83486,12 @@ __webpack_require__.r(__webpack_exports__);
  * includes Vue and other libraries. It is a great starting point when
  * building robust, powerful web applications using Vue and Laravel.
  */
-__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js"); // require("sticky-kit.js");
+__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
-
-__webpack_require__(/*! sticky-kit/dist/sticky-kit.js */ "./node_modules/sticky-kit/dist/sticky-kit.js"); //require('sticky-sidebar')
-//window.Vue = require('vue')
+__webpack_require__(/*! sticky-kit/dist/sticky-kit.js */ "./node_modules/sticky-kit/dist/sticky-kit.js"); // Imports
 
 
 
- // Imports
 
 
  //import Affix from 'vue-affix';

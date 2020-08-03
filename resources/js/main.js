@@ -5,16 +5,12 @@
  */
 
 require("./bootstrap");
-// require("sticky-kit.js");
 require("sticky-kit/dist/sticky-kit.js");
 
-//require('sticky-sidebar')
-//window.Vue = require('vue')
-
+// Imports
 import Vue from "vue";
 import Vuex from "vuex";
 
-// Imports
 import moment from "moment";
 import swal from "sweetalert2";
 //import Affix from 'vue-affix';

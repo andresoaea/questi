@@ -1,5 +1,17 @@
 <template>
   <div>
+    <ul class="nav nav-tabs questions-list-nav-tabs">
+      <li class="nav-item">
+        <a class="nav-link active" href="#">Recent questions</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Most answered</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Without answer</a>
+      </li>
+    </ul>
+
     <h4 v-if="searchQuery && questions.length > 0">Search results for: {{ searchQuery }}</h4>
     <h4 v-if="searchQuery && questions.length === 0">No results for: {{ searchQuery }}</h4>
     <h4 v-if="!searchQuery && questions.length === 0">No questions on this site yet</h4>
