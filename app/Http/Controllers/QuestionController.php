@@ -153,9 +153,9 @@ class QuestionController extends Controller
 
     private function queryByType($type) {
         if($type === 'most-answered') {
-             $questions_resource = Question::with('answers')                 
-                            ->orderBy('answers_count', 'desc')   
+             $questions_resource = Question::with('answers')                     
                             ->withCount('answers')
+                            ->orderBy('answers_count', 'desc')   
                             ->having('answers_count', '>', 0)
                             ->paginate(20)
                             ->toArray();
@@ -164,9 +164,9 @@ class QuestionController extends Controller
         } 
 
         if($type === 'without-answer') {
-            $questions_resource = Question::with('answers')                 
+            $questions_resource = Question::with('answers')     
+                            ->withCount('answers')            
                             ->orderBy('created_at', 'desc')   
-                            ->withCount('answers')
                             ->having('answers_count', '=', 0)
                             ->paginate(20)
                             ->toArray();
