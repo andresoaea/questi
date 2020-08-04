@@ -41,7 +41,10 @@ class AppServiceProvider extends ServiceProvider
 
         view()->composer('*', function($view){
             $view_name = str_replace('.', '-', $view->getName());
-            view()->share('view_name', $view_name);
+            view()->share([
+                'view_name' => $view_name,
+                'site_url'  => URL::to('/')
+            ]);
         });
 
         View::share('sidebar_widgets', WidgetController::getAllData());

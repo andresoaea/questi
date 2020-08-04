@@ -2697,6 +2697,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 
  // import VueGoodshare from "vue-goodshare";
@@ -2716,7 +2717,7 @@ __webpack_require__.r(__webpack_exports__);
   created: function created() {
     var _this = this;
 
-    axios.get(siteUrl + '/api/reaction/' + question.id + (currentUser ? '/' + currentUser.id : '')).then(function (response) {
+    axios.get(siteUrl + "/api/reaction/" + question.id + (currentUser ? "/" + currentUser.id : "")).then(function (response) {
       _this.reactionsData = response.data;
     });
   }
@@ -66035,7 +66036,11 @@ var render = function() {
                   staticClass: "fa fa-folder-open-o",
                   attrs: { "aria-hidden": "true" }
                 }),
-                _vm._v("   " + _vm._s(_vm.question.category))
+                _vm._v(
+                  "\n            " +
+                    _vm._s(_vm.question.category) +
+                    "\n        "
+                )
               ])
             ]),
             _vm._v(" "),
@@ -66055,7 +66060,7 @@ var render = function() {
                 _vm.question.best_answer
                   ? _c("span", { staticClass: "float-left solved" }, [
                       _c("i", { staticClass: "fa fa-check" }),
-                      _vm._v(" Solved\n\t\t\t    \t")
+                      _vm._v(" Solved\n        ")
                     ])
                   : _vm._e(),
                 _vm._v(" "),
