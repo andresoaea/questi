@@ -18,7 +18,8 @@
         "laravel/passport": "^9.3",
         "laravel/tinker": "^2.0",
         "laravel/ui": "^2.1",
-        "fzaninotto/faker": "^1.9.1"
+        "fzaninotto/faker": "^1.9.1",
+        "ext-gd": "*"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.3",
