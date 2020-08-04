@@ -8,7 +8,7 @@
 
   <title>Questi - Admin</title>
 
-  <link rel="stylesheet" href="{{ asset('assets/css/admin.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/admin.css') }}">
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
 <body class="hold-transition sidebar-mini">
@@ -309,7 +309,7 @@
 <!-- ./wrapper -->
 
 <!-- REQUIRED SCRIPTS -->
-<script src="{{ asset('assets/js/admin.js') }}"></script>
+<script src="{{ asset('js/admin.js') }}"></script>
 
 </body>
 </html>

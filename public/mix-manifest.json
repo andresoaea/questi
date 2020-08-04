@@ -1,10 +1,14 @@
 {
+    "/js/admin.js": "/js/admin.js",
+    "/js/admin.js.map": "/js/admin.js.map",
     "/js/main.js": "/js/main.js",
     "/css/main.css": "/css/main.css",
     "/css/profile.css": "/css/profile.css",
+    "/css/admin.css": "/css/admin.css",
     "/js/main.js.map": "/js/main.js.map",
     "/css/main.css.map": "/css/main.css.map",
     "/css/profile.css.map": "/css/profile.css.map",
+    "/css/admin.css.map": "/css/admin.css.map",
     "/js/profile.js": "/js/profile.js",
     "/js/profile.js.map": "/js/profile.js.map"
 }
