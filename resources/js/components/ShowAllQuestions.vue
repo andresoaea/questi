@@ -8,7 +8,7 @@
 
     <h4 v-if="searchQuery && questions.length > 0">Search results for: {{ searchQuery }}</h4>
     <h4 v-if="searchQuery && questions.length === 0">No results for: {{ searchQuery }}</h4>
-    <h4 v-if="!searchQuery && questions.length === 0">No questions on this site yet</h4>
+    <h4 v-if="!searchQuery && questions.length === 0">No questions yet</h4>
 
     <article v-for="question in questions" class="question">
       <div class="user-image">

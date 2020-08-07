@@ -65684,7 +65684,7 @@ var render = function() {
         : _vm._e(),
       _vm._v(" "),
       !_vm.searchQuery && _vm.questions.length === 0
-        ? _c("h4", [_vm._v("No questions on this site yet")])
+        ? _c("h4", [_vm._v("No questions yet")])
         : _vm._e(),
       _vm._v(" "),
       _vm._l(_vm.questions, function(question) {

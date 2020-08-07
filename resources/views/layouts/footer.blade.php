@@ -4,30 +4,25 @@
 
 @section('footer')
 
-	<back-to-top bottom="50px" right="50px">
-		<button type="button" class="btn btn-info btn-to-top"><i class="fa fa-chevron-up"></i></button>
-	</back-to-top>
+			<back-to-top bottom="50px" right="50px">
+				<button type="button" class="btn btn-info btn-to-top"><i class="fa fa-chevron-up"></i></button>
+			</back-to-top>
 
-		<footer style="width: 100%; height: 200px; background-color: #343a40;">
-			
-		</footer>
+			<footer class="main-footer">
+				<p class="copyright-text">&copy; 2020 Questi - Q&A Platform</p>	
+			</footer>
 
-	</div><!-- #questi -->
+		</div><!-- #questi -->
 
-	@include('layouts.js')
+		@include('layouts.js')
 		<script>window.currentUser = {!! $currnt_user !!}</script>
-<!-- 	<script src="https://abouolia.github.io/sticky-sidebar/js/ResizeSensor.js"></script> -->
-
-	<script src="{{ URL::to('js/main.js') }}"></script> 
+		<script src="{{ asset('js/main.js') }}"></script> 
 
 
-	@if(!empty($isProfilePage))
-		<script src="{{ URL::to('js/profile.js') }}"></script> 
-	@endif
+		@if(!empty($isProfilePage))
+			<script src="{{ asset('js/profile.js') }}"></script> 
+		@endif
 	
-
-<!-- 	<script src="https://cdn.rawgit.com/leafo/sticky-kit/v1.1.2/jquery.sticky-kit.min.js"></script> -->
-
 	</body>
 </html>
 
