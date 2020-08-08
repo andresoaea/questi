@@ -25,6 +25,7 @@
 
 <script>
 import SiteStats from "./SiteStats.vue";
+import MostLikedQuestions from "./MostLikedQuestions.vue";
 
 export default {
   data() {
@@ -33,7 +34,8 @@ export default {
     };
   },
   components: {
-    "site-stats": SiteStats
+    "site-stats": SiteStats,
+    "most-liked-questions": MostLikedQuestions
   },
   created() {
     this.widgets = JSON.parse(widgets);

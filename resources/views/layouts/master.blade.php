@@ -7,7 +7,6 @@
     	</div>
 	    <div class="sidebar col-lg-4">
 	        <div class="sidebar__inner" data-sticky_column>
-	           {{-- @include('layouts.sidebar') --}} 
 			   <sidebar-widgets></sidebar-widgets>
 	        </div>
 	    </div>

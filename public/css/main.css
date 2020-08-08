@@ -14563,6 +14563,14 @@ a.text-dark:focus {
   color: rgba(255, 255, 255, 0.7);
 }
 
+.widget-most-liked-questions {
+  font-size: 14px;
+}
+
+.widget-most-liked-questions .question {
+  margin-bottom: 10px;
+}
+
 body {
   font-family: "Poppins", sans-serif;
   background-color: #f3f3f3;

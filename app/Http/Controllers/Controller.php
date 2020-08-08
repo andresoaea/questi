@@ -17,10 +17,6 @@ class Controller extends BaseController
     public function __construct(Request $request)
     {
 
-        // $request = new Request();
-
-        // //var_dump( \Request::route()->getName() );
-
          $widgets_data = WidgetController::getAllData();
          
          \JavaScript::put([

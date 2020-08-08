@@ -22,7 +22,6 @@ class Question extends Model
         return $this->hasMany('App\Answer', 'for', 'id');
     }
 
-
     public function answersCount() 
     {
     	 return Answer::whereFor($this->id)->count();

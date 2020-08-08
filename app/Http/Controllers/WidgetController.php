@@ -20,6 +20,9 @@ class WidgetController extends Controller
 				'site_stats' => [
 					'title' => 'Statistics'
 					// 'not_standard_layout' => true
+				],
+				'most_liked_questions' => [
+					'title' => 'Most appreciated qustions'
 				]
             
         ];
@@ -111,11 +114,12 @@ class WidgetController extends Controller
     {
     	$number = isset($options['number']) ? $options['number'] : 4;
 
-    	$questions = Question::orderBy('reactions->like', 'DESC')->take($number)->get()->toArray();
+    	$questions = Question::where('reactions->like', '!=', '0')->orderBy('reactions->like', 'ASC')->take($number)->get()->toArray();
 
     	return $questions;
 
 	}
+
 	
 
 	public static function addQuestionButtonHTML()
