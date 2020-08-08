@@ -20,11 +20,15 @@
     </head>
     <body>
 
-    <div class="questi-preloader">
-       <div class="pulse-loader"></div>
-    </div>
+  {{--  @inject( 'response', 'Illuminate\Http\Response' )
+   @if($response->status() === 200)
+   --}}
 
-    	<div id="questi">
+      <div class="questi-preloader">
+         <div class="pulse-loader"></div>
+      </div> 
+
+         <div id="questi">
     	
     		<vue-progress-bar></vue-progress-bar>
     		<navigation-bar></navigation-bar>

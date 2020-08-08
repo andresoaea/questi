@@ -16,7 +16,7 @@ class Controller extends BaseController
 
     public function __construct(Request $request)
     {
-
+    
          $widgets_data = WidgetController::getAllData();
          
          \JavaScript::put([
