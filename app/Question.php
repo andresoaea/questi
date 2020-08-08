@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Question extends Model
 {
 
-	protected $appends = ['answers_count'];
+	protected $appends = ['answers_count', 'full_url', 'category_slug'];
 
     protected $fillable = [
     	'title', 'slug', 'description', 'category', 'author', 'reactions', 'best_answer'
@@ -43,6 +43,11 @@ class Question extends Model
         }
 
         return $category_slug;
+    }
+
+
+    public function getFullUrlAttribute() {
+        return \URL::to("/{$this->category_slug}/{$this->slug}");
     }
 
 }

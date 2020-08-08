@@ -43,6 +43,7 @@
     -   sticky-kit - a jQuery plugin for making smart sticky elements
     -   sweetalert2 - customizable popup boxes
     -   font-awesome - icons
+    -   vform - vue ajax form validation
     -   vue-parallaxy - compontent parallax scroll effects in vue
     -   vue-backtotop - back to top button
     -   vue-progressbar - nice progress bar for ajax requests

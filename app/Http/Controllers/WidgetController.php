@@ -114,7 +114,12 @@ class WidgetController extends Controller
     {
     	$number = isset($options['number']) ? $options['number'] : 4;
 
-    	$questions = Question::where('reactions->like', '!=', '0')->orderBy('reactions->like', 'ASC')->take($number)->get()->toArray();
+		$questions = Question::where('reactions->like', '!=', '0')
+							  ->orderBy('reactions->like', 'ASC')
+							  ->take($number)
+							  ->get()
+							  ->makeHidden(['id', 'category', 'best_answer', 'description', 'author', 'created_at', 'updated_at', 'answers_count', 'category_slug', 'slug'])
+							  ->toArray();
 
     	return $questions;
 
