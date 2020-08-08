@@ -68,6 +68,8 @@ Vue.component(
     require("./components/widgets/Widgets.vue").default
 );
 
+Vue.component("questi-footer", require("./components/Footer.vue").default);
+
 Vue.component("sign-in-box", require("./components/SignInBox.vue").default);
 
 let routes = [

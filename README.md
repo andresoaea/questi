@@ -1,4 +1,4 @@
-### Q&A Website with administration panel - !! In development !!
+### Q&A Platform with administration panel - !! In development !!
 
 ###### Built on Laravel 7 + Vue
 
@@ -14,7 +14,7 @@
     -   Username login
     -   Facebook login
 
--   Live search with ajax (no paage reload)
+-   Live search with ajax (no page reload)
 
 -   User roles:
 

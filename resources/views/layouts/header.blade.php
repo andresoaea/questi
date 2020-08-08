@@ -20,6 +20,10 @@
     </head>
     <body>
 
+    <div class="questi-preloader">
+       <div class="pulse-loader"></div>
+    </div>
+
     	<div id="questi">
     	
     		<vue-progress-bar></vue-progress-bar>

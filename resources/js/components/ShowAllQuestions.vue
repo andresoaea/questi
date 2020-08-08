@@ -139,6 +139,7 @@ export default {
     axios.get(url).then(response => {
       setTimeout(() => {
         this.isLoading = false;
+
         this.updateAllData(response.data);
       }, 600);
     });

@@ -14571,6 +14571,59 @@ a.text-dark:focus {
   margin-bottom: 10px;
 }
 
+.questi-preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #fff;
+  z-index: 99999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.questi-preloader .pulse-loader:not(:required) {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  -webkit-animation: pulse-loader 0.7s linear infinite alternate;
+          animation: pulse-loader 0.7s linear infinite alternate;
+  border: 2px solid #e67e22;
+  border-radius: 50%;
+  overflow: hidden;
+  text-indent: 50px;
+}
+
+@-webkit-keyframes pulse-loader {
+  0% {
+    box-shadow: #e67e22 0 0 0px 20px;
+  }
+
+  40% {
+    box-shadow: none;
+  }
+
+  100% {
+    box-shadow: #e67e22 0 0 0px 25px inset;
+  }
+}
+
+@keyframes pulse-loader {
+  0% {
+    box-shadow: #e67e22 0 0 0px 20px;
+  }
+
+  40% {
+    box-shadow: none;
+  }
+
+  100% {
+    box-shadow: #e67e22 0 0 0px 25px inset;
+  }
+}
+
 body {
   font-family: "Poppins", sans-serif;
   background-color: #f3f3f3;

@@ -8,9 +8,7 @@
 				<button type="button" class="btn btn-info btn-to-top"><i class="fa fa-chevron-up"></i></button>
 			</back-to-top>
 
-			<footer class="main-footer">
-				<p class="copyright-text">&copy; 2020 Questi - Q&A Platform</p>	
-			</footer>
+			<questi-footer></questi-footer>
 
 		</div><!-- #questi -->
 
