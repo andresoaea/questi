@@ -17,7 +17,7 @@ Auth::routes();
 // Home routes
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/{url}', 'HomeController@index')
-    ->where(['url' => '/|most-answered|without-answer'])
+    ->where(['url' => 'most-answered|without-answer'])
     ->name('home');
 
 

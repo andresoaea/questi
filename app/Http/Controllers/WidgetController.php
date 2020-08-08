@@ -27,7 +27,7 @@ class WidgetController extends Controller
 		$widgets = [];
 
 		$default_widgets = [
-			'add_new_question_button'   => null,
+			'add_new_question_button'   => 'addQuestionButtonHTML',
 			'site_stats'                => 'siteStats',
 			'most_liked_questions'      => 'mostLikedQuestions'
 		];
@@ -37,28 +37,23 @@ class WidgetController extends Controller
             
 
 			if(array_key_exists($widget_n_key, $default_widgets)) {
-              
-
-				if(isset($widget_n_value['not_standard_layout'])) {
-					$widgets[$widget_n_key] = $widget_n_value;
-					continue;
-				}
-
+			  
 				$method = $default_widgets[$widget_n_key];
 				$options = !empty($widget_n_value['options']) ? $widget_n_value['options'] : null;
 
-				$widgets[$widget_n_key] = [
-					'title' => $widget_n_value['title'],
+				$widget = [
+					'title' => !empty($widget_n_value['title']) ? $widget_n_value['title'] : null,
 					'data'  => self::$method($options)
 				];
+
+				if(isset($widget_n_value['not_standard_layout'])) {
+					$widget['not_standard_layout'] = true;
+				}
+
+				$widgets[$widget_n_key] = $widget;
+				
 			}
 		}
-
-
-		// foreach ($default_widgets as $widget_key => $widget_data) {
-		// 	$widgets[$widget_key] = self::$widget_data();
-		// }
-	
 
 		return $widgets;
 
@@ -68,8 +63,6 @@ class WidgetController extends Controller
     {
 
     	$stats = [];
-    	// $models = [ 'users' => 'User', 'questions' => 'Question', 'answers' => 'Answer'];
-    	// $texts = [ 'users' => 'Users', 'questions' => 'Questions', 'answers' => 'Answers' ];
 
     	$defaults = [
     		'users' => [
@@ -122,6 +115,21 @@ class WidgetController extends Controller
 
     	return $questions;
 
-    }
+	}
+	
+
+	public static function addQuestionButtonHTML()
+	{
+
+		if(\Request::route()->getName() !== 'addQuestion') {
+			$html = '<a href="' . route('addQuestion') . '">Ask a question</a>';
+		} else {
+			$html = '<!-- Fix for first widget spacing -->
+			<div style="position:relative; top:0; margin-top: -30px;"></div>';
+		}
+
+		return ['html' => $html];
+
+	}
 
 }

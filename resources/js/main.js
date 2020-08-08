@@ -13,14 +13,12 @@ import Vuex from "vuex";
 
 import moment from "moment";
 import swal from "sweetalert2";
-//import Affix from 'vue-affix';
 import VueRouter from "vue-router";
 import BackToTop from "vue-backtotop";
 import VueProgressBar from "vue-progressbar";
 import { Form, HasError, AlertError } from "vform";
-//import ReallySmoothScroll from 'really-smooth-scroll'
+import ShowAllQuestions from "./components/ShowAllQuestions.vue";
 
-//Vue.use(Affix);
 Vue.use(Vuex);
 Vue.use(BackToTop);
 Vue.use(VueRouter);
@@ -30,6 +28,8 @@ window.Vuex = Vuex;
 
 window.Form = Form;
 window.swal = swal;
+
+Vue.config.productionTip = false;
 
 Vue.use(VueProgressBar, {
     color: "rgb(0, 153, 43)",
@@ -63,9 +63,12 @@ Vue.component(
     require("./components/ShowSingleAnswer.vue").default
 );
 
-Vue.component("sign-in-box", require("./components/SignInBox.vue").default);
+Vue.component(
+    "sidebar-widgets",
+    require("./components/widgets/Widgets.vue").default
+);
 
-import ShowAllQuestions from "./components/ShowAllQuestions.vue";
+Vue.component("sign-in-box", require("./components/SignInBox.vue").default);
 
 let routes = [
     {
@@ -148,32 +151,6 @@ $(document).mouseup(function(e) {
     }
 });
 
-// Init smooth scroll
-// ReallySmoothScroll.shim()
-// ReallySmoothScroll.config({
-//   mousewheelSensitivity: 5
-// })
-
-// $(function() {
-//   let siebarAffix = $(".sidebar-affix")
-//   let parentWidth = siebarAffix.parent().width()
-
-//   siebarAffix.width(parentWidth)
-
-// });
-// $(function() {
-//   $("html,body").animate({ scrollTop: 0 }, "slow");
-// })
-
-// var stickySidebar = new StickySidebar('#sidebar', {
-//       topSpacing: 20,
-//       bottomSpacing: 0,
-//       containerSelector: '.container',
-//       innerWrapperSelector: '.sidebar__inner'
-//     })
-
-// var sidebar = new StickySidebar('.sidebar', {innerWrapperSelector: '.sidebar__inner'});
-
 // Sticky Sidebar Initialization
 $(function() {
     return $("[data-sticky_column]").stick_in_parent({
@@ -184,4 +161,9 @@ $(function() {
 
 // $(window).on("resize", function() {
 //     $(document.body).trigger("sticky_kit:recalc")
+// })
+
+// });
+// $(function() {
+//   $("html,body").animate({ scrollTop: 0 }, "slow");
 // })

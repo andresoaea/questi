@@ -39,21 +39,26 @@ class AppServiceProvider extends ServiceProvider
             $url->forceScheme('https');
         }
 
-        view()->composer('*', function($view){
-            $view_name = str_replace('.', '-', $view->getName());
-            view()->share([
-                'view_name' => $view_name,
-                'site_url'  => URL::to('/')
-            ]);
-        });
+        // view()->composer('*', function($view){
 
-        View::share('sidebar_widgets', WidgetController::getAllData());
+        //     $view_name = str_replace('.', '-', $view->getName());
 
-        // var_dump( WidgetController::getAllData());
+        //     view()->share([
+        //         'view_name' => $view_name,
+        //         'site_url'  => URL::to('/')
+        //     ]);
+        // });
 
-        JavaScript::put([
-            'siteUrl'  => URL::to('/'),
-            'baseUrl'  => $request->getBaseUrl()
-        ]);
+
+        //View::share('sidebar_widgets', WidgetController::getAllData());
+
+
+        // $widgets_data = WidgetController::getAllData();
+       
+        // JavaScript::put([
+        //     'siteUrl'  => URL::to('/'),
+        //     'baseUrl'  => $request->getBaseUrl(),
+        //     'widgets'  => json_encode($widgets_data)
+        // ]);
     }
 }

@@ -1,48 +1,49 @@
 /* General style */
-.sidebar{
+.sidebar {
     will-change: min-height;
 }
 
-.sidebar__inner{
+.sidebar__inner {
     transform: translate(0, 0);
     transform: translate3d(0, 0, 0);
     will-change: position, transform;
 }
 
 .sidebar-widget {
-	padding: 18px;
-	margin-bottom: 30px;
+    padding: 18px;
+    margin-bottom: 30px;
     background-color: #fff;
-    box-shadow: 0 1px 5px -1px rgba(0,0,0,.2);
-    opacity: .92;
-    transition: opacity .4s ease;
+    box-shadow: 0 1px 5px -1px rgba(0, 0, 0, 0.2);
+    opacity: 0.92;
+    transition: opacity 0.4s ease;
 
-    &:hover, &:focus {
-    	opacity: 1;
+    &:hover,
+    &:focus {
+        opacity: 1;
 
-    	hr {
-    		width: 100%;
-    	}
+        hr {
+            width: 100%;
+        }
     }
 
     .widget-title {
-    	font-size: 18px;
+        font-size: 18px;
     }
 
     hr {
-    	width: 80%;
-    	height: 2px;
-    	border: none;
-	    opacity: .9;
-	    margin-top: 0;
-	    margin-left: 0;
-	    background-color: #F08727;
-	    transition: width .7s ease;
+        width: 80%;
+        height: 2px;
+        border: none;
+        opacity: 0.9;
+        margin-top: 0;
+        margin-left: 0;
+        background-color: #f08727;
+        transition: width 0.7s ease;
     }
 }
 
 .widget-not-standard {
-	margin-bottom: 30px;
+    margin-bottom: 30px;
 }
 
 /*.sidebar__inner.is_stuck > div {
@@ -52,46 +53,45 @@
 /* Widgets style */
 /* Add new question widget */
 .widget-add-new-question-button {
-	a {
-		background-color: #F08727;
-	    display: block;
-	    width: 100%;
-	    border: none;
-	    padding: 10px 20px;
-	    color: #fff;
-	    border-radius: 4px;
-	    opacity: .94;
-	    cursor: pointer;
-	    text-align: center;
-	    margin: 0 auto;
-	    transition: all .5s ease;
+    a {
+        background-color: #f08727;
+        display: block;
+        width: 100%;
+        border: none;
+        padding: 10px 20px;
+        color: #fff;
+        border-radius: 4px;
+        opacity: 0.94;
+        cursor: pointer;
+        text-align: center;
+        margin: 0 auto;
+        transition: all 0.5s ease;
 
-	    &:hover {
-	    	opacity: 1;
-	    	width: 96%;
-	    }
-	}
+        &:hover {
+            opacity: 1;
+            width: 96%;
+        }
+    }
 }
 
 /* Site stats widget */
 .widget-site-stats {
-	.circle-tile {
-	  margin-bottom: 15px;
-	  text-align: center;
-	}
+    .circle-tile {
+        margin-bottom: 15px;
+        text-align: center;
+    }
 
-	.circle-tile-heading {
+    .circle-tile-heading {
+        border: 3px solid rgba(255, 255, 255, 0.3);
+        border-radius: 100%;
+        color: #ffffff;
+        height: 54px;
+        margin: 0 auto -34px;
+        position: relative;
+        transition: all 0.3s ease-in-out 0s;
+        width: 56px;
 
-		border: 3px solid rgba(255, 255, 255, 0.3);
-	    border-radius: 100%;
-	    color: #FFFFFF;
-	    height: 54px;
-	    margin: 0 auto -34px;
-	    position: relative;
-	    transition: all 0.3s ease-in-out 0s;
-	    width: 56px;
-
-	 /* border: 3px solid rgba(255, 255, 255, 0.3);
+        /* border: 3px solid rgba(255, 255, 255, 0.3);
 	  border-radius: 100%;
 	  color: #FFFFFF;
 	  height: 60px;
@@ -99,136 +99,130 @@
 	  position: relative;
 	  transition: all 0.3s ease-in-out 0s;
 	  width: 62px;*/
-		  .fa {
-		  	font-size: 24px;
-		    line-height: 46px;
-		  }
-	}
+        .fa {
+            font-size: 24px;
+            line-height: 46px;
+        }
+    }
 
-	.circle-tile-content {
-	  padding-top: 38px;
-	}
+    .circle-tile-content {
+        padding-top: 38px;
+    }
 
-	.circle-tile-number {
-	  font-size: 20px;
-      font-weight: 700;
-      line-height: 1;
-      padding: 0px 0 8px;
-	}
+    .circle-tile-number {
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 1;
+        padding: 0px 0 8px;
+    }
 
-	.circle-tile-description {
-	  text-transform: uppercase;
-	}
+    .circle-tile-description {
+        text-transform: uppercase;
+    }
 
-	.circle-tile-footer {
-	  background-color: rgba(0, 0, 0, 0.1);
-	  color: rgba(255, 255, 255, 0.5);
-	  display: block;
-	  padding: 5px;
-	  transition: all 0.3s ease-in-out 0s;
-	  &:hover {
-	    background-color: rgba(0, 0, 0, 0.2);
-	    color: rgba(255, 255, 255, 0.5);
-	    text-decoration: none;
-	  }
-	}
+    .circle-tile-footer {
+        background-color: rgba(0, 0, 0, 0.1);
+        color: rgba(255, 255, 255, 0.5);
+        display: block;
+        padding: 5px;
+        transition: all 0.3s ease-in-out 0s;
+        &:hover {
+            background-color: rgba(0, 0, 0, 0.2);
+            color: rgba(255, 255, 255, 0.5);
+            text-decoration: none;
+        }
+    }
 
-	.circle-tile-heading {
-	  &.dark-blue:hover {
-	    background-color: #2E4154;
-	  }
-	  &.green:hover {
-	    background-color: #138F77;
-	  }
-	  &.orange:hover {
-	    background-color: #DA8C10;
-	  }
-	  &.blue:hover {
-	    background-color: #2473A6;
-	  }
-	  &.red:hover {
-	    background-color: #CF4435;
-	  }
-	  &.purple:hover {
-	    background-color: #7F3D9B;
-	  }
-	}
+    .circle-tile-heading {
+        &.dark-blue:hover {
+            background-color: #2e4154;
+        }
+        &.green:hover {
+            background-color: #138f77;
+        }
+        &.orange:hover {
+            background-color: #da8c10;
+        }
+        &.blue:hover {
+            background-color: #2473a6;
+        }
+        &.red:hover {
+            background-color: #cf4435;
+        }
+        &.purple:hover {
+            background-color: #7f3d9b;
+        }
+    }
 
-	.tile-img {
-	  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.9);
-	}
+    .tile-img {
+        text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.9);
+    }
 
-	.dark-blue {
-	  background-color: #34495E;
-	}
+    .dark-blue {
+        background-color: #34495e;
+    }
 
-	.green {
-	  background-color: #16A085;
-	}
+    .green {
+        background-color: #16a085;
+    }
 
-	.blue {
-	  background-color: #2980B9;
-	}
+    .blue {
+        background-color: #2980b9;
+    }
 
-	.orange {
-	  background-color: #F39C12;
-	}
+    .orange {
+        background-color: #f39c12;
+    }
 
-	.red {
-	  background-color: #E74C3C;
-	}
+    .red {
+        background-color: #e74c3c;
+    }
 
-	.purple {
-	  background-color: #8E44AD;
-	}
+    .purple {
+        background-color: #8e44ad;
+    }
 
-	.dark-gray {
-	  background-color: #7F8C8D;
-	}
+    .dark-gray {
+        background-color: #7f8c8d;
+    }
 
-	.gray {
-	  background-color: #95A5A6;
-	}
+    .gray {
+        background-color: #95a5a6;
+    }
 
-	.light-gray {
-	  background-color: #BDC3C7;
-	}
+    .light-gray {
+        background-color: #bdc3c7;
+    }
 
-	.yellow {
-	  background-color: #F1C40F;
-	}
+    .yellow {
+        background-color: #f1c40f;
+    }
 
-	.text-dark-blue {
-	  color: #34495E;
-	}
+    .text-dark-blue {
+        color: #34495e;
+    }
 
-	.text-green {
-	  color: #16A085;
-	}
+    .text-green {
+        color: #16a085;
+    }
 
-	.text-blue {
-	  color: #2980B9;
-	}
+    .text-blue {
+        color: #2980b9;
+    }
 
-	.text-orange {
-	  color: #F39C12;
-	}
+    .text-orange {
+        color: #f39c12;
+    }
 
-	.text-red {
-	  color: #E74C3C;
-	}
+    .text-red {
+        color: #e74c3c;
+    }
 
-	.text-purple {
-	  color: #8E44AD;
-	}
+    .text-purple {
+        color: #8e44ad;
+    }
 
-	.text-faded {
-	  color: rgba(255, 255, 255, 0.7);
-	}
+    .text-faded {
+        color: rgba(255, 255, 255, 0.7);
+    }
 }
-
-
-
-
-
-

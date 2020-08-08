@@ -14371,7 +14371,7 @@ a.text-dark:focus {
   opacity: 0.9;
   margin-top: 0;
   margin-left: 0;
-  background-color: #F08727;
+  background-color: #f08727;
   transition: width 0.7s ease;
 }
 
@@ -14388,7 +14388,7 @@ a.text-dark:focus {
 /* Add new question widget */
 
 .widget-add-new-question-button a {
-  background-color: #F08727;
+  background-color: #f08727;
   display: block;
   width: 100%;
   border: none;
@@ -14417,20 +14417,20 @@ a.text-dark:focus {
 .widget-site-stats .circle-tile-heading {
   border: 3px solid rgba(255, 255, 255, 0.3);
   border-radius: 100%;
-  color: #FFFFFF;
+  color: #ffffff;
   height: 54px;
   margin: 0 auto -34px;
   position: relative;
   transition: all 0.3s ease-in-out 0s;
   width: 56px;
   /* border: 3px solid rgba(255, 255, 255, 0.3);
-   border-radius: 100%;
-   color: #FFFFFF;
-   height: 60px;
-   margin: 0 auto -40px;
-   position: relative;
-   transition: all 0.3s ease-in-out 0s;
-   width: 62px;*/
+  border-radius: 100%;
+  color: #FFFFFF;
+  height: 60px;
+  margin: 0 auto -40px;
+  position: relative;
+  transition: all 0.3s ease-in-out 0s;
+  width: 62px;*/
 }
 
 .widget-site-stats .circle-tile-heading .fa {
@@ -14468,27 +14468,27 @@ a.text-dark:focus {
 }
 
 .widget-site-stats .circle-tile-heading.dark-blue:hover {
-  background-color: #2E4154;
+  background-color: #2e4154;
 }
 
 .widget-site-stats .circle-tile-heading.green:hover {
-  background-color: #138F77;
+  background-color: #138f77;
 }
 
 .widget-site-stats .circle-tile-heading.orange:hover {
-  background-color: #DA8C10;
+  background-color: #da8c10;
 }
 
 .widget-site-stats .circle-tile-heading.blue:hover {
-  background-color: #2473A6;
+  background-color: #2473a6;
 }
 
 .widget-site-stats .circle-tile-heading.red:hover {
-  background-color: #CF4435;
+  background-color: #cf4435;
 }
 
 .widget-site-stats .circle-tile-heading.purple:hover {
-  background-color: #7F3D9B;
+  background-color: #7f3d9b;
 }
 
 .widget-site-stats .tile-img {
@@ -14496,67 +14496,67 @@ a.text-dark:focus {
 }
 
 .widget-site-stats .dark-blue {
-  background-color: #34495E;
+  background-color: #34495e;
 }
 
 .widget-site-stats .green {
-  background-color: #16A085;
+  background-color: #16a085;
 }
 
 .widget-site-stats .blue {
-  background-color: #2980B9;
+  background-color: #2980b9;
 }
 
 .widget-site-stats .orange {
-  background-color: #F39C12;
+  background-color: #f39c12;
 }
 
 .widget-site-stats .red {
-  background-color: #E74C3C;
+  background-color: #e74c3c;
 }
 
 .widget-site-stats .purple {
-  background-color: #8E44AD;
+  background-color: #8e44ad;
 }
 
 .widget-site-stats .dark-gray {
-  background-color: #7F8C8D;
+  background-color: #7f8c8d;
 }
 
 .widget-site-stats .gray {
-  background-color: #95A5A6;
+  background-color: #95a5a6;
 }
 
 .widget-site-stats .light-gray {
-  background-color: #BDC3C7;
+  background-color: #bdc3c7;
 }
 
 .widget-site-stats .yellow {
-  background-color: #F1C40F;
+  background-color: #f1c40f;
 }
 
 .widget-site-stats .text-dark-blue {
-  color: #34495E;
+  color: #34495e;
 }
 
 .widget-site-stats .text-green {
-  color: #16A085;
+  color: #16a085;
 }
 
 .widget-site-stats .text-blue {
-  color: #2980B9;
+  color: #2980b9;
 }
 
 .widget-site-stats .text-orange {
-  color: #F39C12;
+  color: #f39c12;
 }
 
 .widget-site-stats .text-red {
-  color: #E74C3C;
+  color: #e74c3c;
 }
 
 .widget-site-stats .text-purple {
-  color: #8E44AD;
+  color: #8e44ad;
 }
 
 .widget-site-stats .text-faded {
