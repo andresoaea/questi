@@ -17,7 +17,7 @@ class QuestionSeeder extends Seeder
 
        
 
-        for($i=0; $i<=50; $i++):
+        for($i=0; $i<=200; $i++):
             $title = $faker->sentence;
             DB::table('questions')
                 ->insert([
