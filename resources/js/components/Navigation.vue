@@ -48,61 +48,56 @@
           />
           <!--  <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> -->
         </form>
-
-        <ul class="navbar-nav float-right">
-          <li v-if="!currentUser" class="nav-item">
-            <a class="nav-link" href="#" @click.prevent="showLoginForm">
-              <i :class="['fa', showLogin ? 'fa-times ' : 'fa-user']"></i>
-              Login
-            </a>
-          </li>
-          <li v-else class="nav-item dropdown dropdown-user-profile">
-            <a
-              class="nav-link dropdown-toggle"
-              href="#"
-              id="navbarDropdown"
-              role="button"
-              data-toggle="dropdown"
-              aria-haspopup="true"
-              aria-expanded="false"
-            >
-              <img v-if="currentUser.picture" :src="currentUser.picture | setImageSrc('profile')" />
-              <img v-else :src="'user-placeholder.svg' | setImageSrc" />
-              {{ currentUser.firstname }}
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" :href="`${siteUrl}/profile`">
-                <i class="fa fa-user"></i> View profile
-              </a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" :href="`${siteUrl}/profile/questions`">
-                <i class="fa fa-question-circle-o"></i> My questions
-              </a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" :href="`${siteUrl}/profile/answers`">
-                <i class="fa fa-reply-all"></i> My answers
-              </a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" :href="`${siteUrl}/profile/change-password`">
-                <i class="fa fa-key"></i> Change password
-              </a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" :href="`${siteUrl}/logout`" @click.prevent="logout">
-                <i class="fa fa-sign-out"></i> Logout
-              </a>
-            </div>
-
-            <form
-              id="logout-form"
-              :action="`${siteUrl}/logout`"
-              method="POST"
-              style="display: none;"
-            >
-              <input type="hidden" name="_token" :value="csrfToken" />
-            </form>
-          </li>
-        </ul>
       </div>
+
+      <ul class="navbar-nav float-right login-switcher">
+        <li v-if="!currentUser" class="nav-item">
+          <a class="nav-link" href="#" @click.prevent="showLoginForm">
+            <i :class="['fa', showLogin ? 'fa-times ' : 'fa-user']"></i>
+            Login
+          </a>
+        </li>
+        <li v-else class="nav-item dropdown dropdown-user-profile">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            id="navbarDropdown"
+            role="button"
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >
+            <img v-if="currentUser.picture" :src="currentUser.picture | setImageSrc('profile')" />
+            <img v-else :src="'user-placeholder.svg' | setImageSrc" />
+            {{ currentUser.firstname }}
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" :href="`${siteUrl}/profile`">
+              <i class="fa fa-user"></i> View profile
+            </a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" :href="`${siteUrl}/profile/questions`">
+              <i class="fa fa-question-circle-o"></i> My questions
+            </a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" :href="`${siteUrl}/profile/answers`">
+              <i class="fa fa-reply-all"></i> My answers
+            </a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" :href="`${siteUrl}/profile/change-password`">
+              <i class="fa fa-key"></i> Change password
+            </a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" :href="`${siteUrl}/logout`" @click.prevent="logout">
+              <i class="fa fa-sign-out"></i> Logout
+            </a>
+          </div>
+
+          <form id="logout-form" :action="`${siteUrl}/logout`" method="POST" style="display: none;">
+            <input type="hidden" name="_token" :value="csrfToken" />
+          </form>
+        </li>
+      </ul>
     </nav>
 
     <header-area></header-area>

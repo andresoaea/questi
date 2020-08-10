@@ -5,8 +5,8 @@
     </div>
 
     <div class="data-input not-authenticated">
-      <p v-if="scope === 'answer'">You need to be signed in to post an answer</p>
-      <p v-else>You need to be signed in to ask a question</p>
+      <p v-if="scope === 'answer'">You must be logged in to post an answer</p>
+      <p v-else>You must be logged in to ask a question</p>
       <div class="row">
         <div class="col regular-login">
           <a href="#" @click.prevent="showLogin">Login to your account</a>

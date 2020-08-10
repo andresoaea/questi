@@ -113,16 +113,27 @@
     color: #fff;
     padding: 2% 0;
     //background-image: linear-gradient(to bottom, #343a40, #3a374b, #522e46, #64252b, #5e2d00);
-    background: #c0392b; /* fallback for old browsers */
+    // background: #c0392b; /* fallback for old browsers */
+    // background: -webkit-linear-gradient(
+    //     to bottom,
+    //     #8e44ad,
+    //     #c0392b
+    // ); /* Chrome 10-25, Safari 5.1-6 */
+    // background: linear-gradient(
+    //     to bottom,
+    //     #8e44ad,
+    //     #c0392b
+    // ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: #4b6cb7; /* fallback for old browsers */
     background: -webkit-linear-gradient(
-        to bottom,
-        #8e44ad,
-        #c0392b
+        to right,
+        #182848,
+        #4b6cb7
     ); /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(
-        to bottom,
-        #8e44ad,
-        #c0392b
+        to right,
+        #182848,
+        #4b6cb7
     ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
     .row {

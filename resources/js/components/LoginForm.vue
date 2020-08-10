@@ -29,7 +29,7 @@
 
 				<div class="col-sm-6 col-register">
 					<h5>Register</h5>
-					<p>Create an account to our website and get help from other people. Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups..</p>
+					<p>Create an account to our website and get help from other people. Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries..</p>
 					<a :href="registerLink" class="member-action btn-register">Create new account</a>
 				</div>
 

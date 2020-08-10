@@ -2269,11 +2269,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
 
 
 
@@ -65430,7 +65425,7 @@ var render = function() {
           _vm._v(" "),
           _c("p", [
             _vm._v(
-              "Create an account to our website and get help from other people. Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.."
+              "Create an account to our website and get help from other people. Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries.."
             )
           ]),
           _vm._v(" "),
@@ -65549,191 +65544,180 @@ var render = function() {
                       })
                     ]
                   )
-                : _vm._e(),
-              _vm._v(" "),
-              _c("ul", { staticClass: "navbar-nav float-right" }, [
-                !_vm.currentUser
-                  ? _c("li", { staticClass: "nav-item" }, [
-                      _c(
-                        "a",
-                        {
-                          staticClass: "nav-link",
-                          attrs: { href: "#" },
-                          on: {
-                            click: function($event) {
-                              $event.preventDefault()
-                              return _vm.showLoginForm($event)
-                            }
-                          }
-                        },
-                        [
-                          _c("i", {
-                            class: [
-                              "fa",
-                              _vm.showLogin ? "fa-times " : "fa-user"
-                            ]
-                          }),
-                          _vm._v("\n            Login\n          ")
-                        ]
-                      )
-                    ])
-                  : _c(
-                      "li",
+                : _vm._e()
+            ]
+          ),
+          _vm._v(" "),
+          _c("ul", { staticClass: "navbar-nav float-right login-switcher" }, [
+            !_vm.currentUser
+              ? _c("li", { staticClass: "nav-item" }, [
+                  _c(
+                    "a",
+                    {
+                      staticClass: "nav-link",
+                      attrs: { href: "#" },
+                      on: {
+                        click: function($event) {
+                          $event.preventDefault()
+                          return _vm.showLoginForm($event)
+                        }
+                      }
+                    },
+                    [
+                      _c("i", {
+                        class: ["fa", _vm.showLogin ? "fa-times " : "fa-user"]
+                      }),
+                      _vm._v("\n          Login\n        ")
+                    ]
+                  )
+                ])
+              : _c(
+                  "li",
+                  { staticClass: "nav-item dropdown dropdown-user-profile" },
+                  [
+                    _c(
+                      "a",
                       {
-                        staticClass: "nav-item dropdown dropdown-user-profile"
+                        staticClass: "nav-link dropdown-toggle",
+                        attrs: {
+                          href: "#",
+                          id: "navbarDropdown",
+                          role: "button",
+                          "data-toggle": "dropdown",
+                          "aria-haspopup": "true",
+                          "aria-expanded": "false"
+                        }
+                      },
+                      [
+                        _vm.currentUser.picture
+                          ? _c("img", {
+                              attrs: {
+                                src: _vm._f("setImageSrc")(
+                                  _vm.currentUser.picture,
+                                  "profile"
+                                )
+                              }
+                            })
+                          : _c("img", {
+                              attrs: {
+                                src: _vm._f("setImageSrc")(
+                                  "user-placeholder.svg"
+                                )
+                              }
+                            }),
+                        _vm._v(
+                          "\n          " +
+                            _vm._s(_vm.currentUser.firstname) +
+                            "\n        "
+                        )
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      {
+                        staticClass: "dropdown-menu",
+                        attrs: { "aria-labelledby": "navbarDropdown" }
                       },
                       [
                         _c(
                           "a",
                           {
-                            staticClass: "nav-link dropdown-toggle",
-                            attrs: {
-                              href: "#",
-                              id: "navbarDropdown",
-                              role: "button",
-                              "data-toggle": "dropdown",
-                              "aria-haspopup": "true",
-                              "aria-expanded": "false"
-                            }
+                            staticClass: "dropdown-item",
+                            attrs: { href: _vm.siteUrl + "/profile" }
                           },
                           [
-                            _vm.currentUser.picture
-                              ? _c("img", {
-                                  attrs: {
-                                    src: _vm._f("setImageSrc")(
-                                      _vm.currentUser.picture,
-                                      "profile"
-                                    )
-                                  }
-                                })
-                              : _c("img", {
-                                  attrs: {
-                                    src: _vm._f("setImageSrc")(
-                                      "user-placeholder.svg"
-                                    )
-                                  }
-                                }),
-                            _vm._v(
-                              "\n            " +
-                                _vm._s(_vm.currentUser.firstname) +
-                                "\n          "
-                            )
+                            _c("i", { staticClass: "fa fa-user" }),
+                            _vm._v(" View profile\n          ")
                           ]
                         ),
                         _vm._v(" "),
+                        _c("div", { staticClass: "dropdown-divider" }),
+                        _vm._v(" "),
                         _c(
-                          "div",
+                          "a",
                           {
-                            staticClass: "dropdown-menu",
-                            attrs: { "aria-labelledby": "navbarDropdown" }
+                            staticClass: "dropdown-item",
+                            attrs: { href: _vm.siteUrl + "/profile/questions" }
                           },
                           [
-                            _c(
-                              "a",
-                              {
-                                staticClass: "dropdown-item",
-                                attrs: { href: _vm.siteUrl + "/profile" }
-                              },
-                              [
-                                _c("i", { staticClass: "fa fa-user" }),
-                                _vm._v(" View profile\n            ")
-                              ]
-                            ),
-                            _vm._v(" "),
-                            _c("div", { staticClass: "dropdown-divider" }),
-                            _vm._v(" "),
-                            _c(
-                              "a",
-                              {
-                                staticClass: "dropdown-item",
-                                attrs: {
-                                  href: _vm.siteUrl + "/profile/questions"
-                                }
-                              },
-                              [
-                                _c("i", {
-                                  staticClass: "fa fa-question-circle-o"
-                                }),
-                                _vm._v(" My questions\n            ")
-                              ]
-                            ),
-                            _vm._v(" "),
-                            _c("div", { staticClass: "dropdown-divider" }),
-                            _vm._v(" "),
-                            _c(
-                              "a",
-                              {
-                                staticClass: "dropdown-item",
-                                attrs: {
-                                  href: _vm.siteUrl + "/profile/answers"
-                                }
-                              },
-                              [
-                                _c("i", { staticClass: "fa fa-reply-all" }),
-                                _vm._v(" My answers\n            ")
-                              ]
-                            ),
-                            _vm._v(" "),
-                            _c("div", { staticClass: "dropdown-divider" }),
-                            _vm._v(" "),
-                            _c(
-                              "a",
-                              {
-                                staticClass: "dropdown-item",
-                                attrs: {
-                                  href: _vm.siteUrl + "/profile/change-password"
-                                }
-                              },
-                              [
-                                _c("i", { staticClass: "fa fa-key" }),
-                                _vm._v(" Change password\n            ")
-                              ]
-                            ),
-                            _vm._v(" "),
-                            _c("div", { staticClass: "dropdown-divider" }),
-                            _vm._v(" "),
-                            _c(
-                              "a",
-                              {
-                                staticClass: "dropdown-item",
-                                attrs: { href: _vm.siteUrl + "/logout" },
-                                on: {
-                                  click: function($event) {
-                                    $event.preventDefault()
-                                    return _vm.logout($event)
-                                  }
-                                }
-                              },
-                              [
-                                _c("i", { staticClass: "fa fa-sign-out" }),
-                                _vm._v(" Logout\n            ")
-                              ]
-                            )
+                            _c("i", { staticClass: "fa fa-question-circle-o" }),
+                            _vm._v(" My questions\n          ")
                           ]
                         ),
                         _vm._v(" "),
+                        _c("div", { staticClass: "dropdown-divider" }),
+                        _vm._v(" "),
                         _c(
-                          "form",
+                          "a",
                           {
-                            staticStyle: { display: "none" },
+                            staticClass: "dropdown-item",
+                            attrs: { href: _vm.siteUrl + "/profile/answers" }
+                          },
+                          [
+                            _c("i", { staticClass: "fa fa-reply-all" }),
+                            _vm._v(" My answers\n          ")
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "dropdown-divider" }),
+                        _vm._v(" "),
+                        _c(
+                          "a",
+                          {
+                            staticClass: "dropdown-item",
                             attrs: {
-                              id: "logout-form",
-                              action: _vm.siteUrl + "/logout",
-                              method: "POST"
+                              href: _vm.siteUrl + "/profile/change-password"
                             }
                           },
                           [
-                            _c("input", {
-                              attrs: { type: "hidden", name: "_token" },
-                              domProps: { value: _vm.csrfToken }
-                            })
+                            _c("i", { staticClass: "fa fa-key" }),
+                            _vm._v(" Change password\n          ")
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "dropdown-divider" }),
+                        _vm._v(" "),
+                        _c(
+                          "a",
+                          {
+                            staticClass: "dropdown-item",
+                            attrs: { href: _vm.siteUrl + "/logout" },
+                            on: {
+                              click: function($event) {
+                                $event.preventDefault()
+                                return _vm.logout($event)
+                              }
+                            }
+                          },
+                          [
+                            _c("i", { staticClass: "fa fa-sign-out" }),
+                            _vm._v(" Logout\n          ")
                           ]
                         )
                       ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "form",
+                      {
+                        staticStyle: { display: "none" },
+                        attrs: {
+                          id: "logout-form",
+                          action: _vm.siteUrl + "/logout",
+                          method: "POST"
+                        }
+                      },
+                      [
+                        _c("input", {
+                          attrs: { type: "hidden", name: "_token" },
+                          domProps: { value: _vm.csrfToken }
+                        })
+                      ]
                     )
-              ])
-            ]
-          )
+                  ]
+                )
+          ])
         ]
       ),
       _vm._v(" "),
@@ -66329,8 +66313,8 @@ var render = function() {
     _vm._v(" "),
     _c("div", { staticClass: "data-input not-authenticated" }, [
       _vm.scope === "answer"
-        ? _c("p", [_vm._v("You need to be signed in to post an answer")])
-        : _c("p", [_vm._v("You need to be signed in to ask a question")]),
+        ? _c("p", [_vm._v("You must be logged in to post an answer")])
+        : _c("p", [_vm._v("You must be logged in to ask a question")]),
       _vm._v(" "),
       _c("div", { staticClass: "row" }, [
         _c("div", { staticClass: "col regular-login" }, [

@@ -71,6 +71,7 @@ body {
         .vld-overlay {
             position: relative;
             margin-top: 70px;
+            margin-bottom: 70px;
 
             .vld-background {
                 background: transparent;
@@ -151,7 +152,7 @@ body {
                         border: 2px solid rgba(240, 135, 39, 0.9);
                         padding: 0px 18px 0px 10px;
                         border-radius: 20px;
-                        margin-top: -4px;
+                        margin-top: -2px;
                         margin-right: 15px;
                         position: relative;
                         &,
@@ -359,3 +360,5 @@ footer.main-footer {
         font-size: 14px;
     }
 }
+
+@import "media-queries.scss";

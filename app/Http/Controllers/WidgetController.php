@@ -22,7 +22,7 @@ class WidgetController extends Controller
 					// 'not_standard_layout' => true
 				],
 				'most_liked_questions' => [
-					'title' => 'Most appreciated qustions'
+					'title' => 'Most appreciated questions'
 				]
             
         ];
