@@ -2795,6 +2795,9 @@ __webpack_require__.r(__webpack_exports__);
   props: ["scope"],
   methods: {
     showLogin: function showLogin() {
+      $("html,body").animate({
+        scrollTop: 0
+      }, "slow");
       _main__WEBPACK_IMPORTED_MODULE_0__["bus"].$emit("showLogin", true);
     }
   }

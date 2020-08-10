@@ -37,6 +37,7 @@ export default {
   props: ["scope"],
   methods: {
     showLogin: function() {
+      $("html,body").animate({ scrollTop: 0 }, "slow");
       bus.$emit("showLogin", true);
     }
   }
