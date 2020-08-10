@@ -13,6 +13,8 @@ class QuestionSeeder extends Seeder
     public function run()
     {
 
+        DB::table('questions')->delete();
+
         $faker = \Faker\Factory::create();
 
        
