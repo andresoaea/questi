@@ -17,9 +17,7 @@ class QuestionSeeder extends Seeder
 
         $faker = \Faker\Factory::create();
 
-       
-
-        for($i=0; $i<=200; $i++):
+        for($i=0; $i<=100; $i++):
             $title = $faker->sentence;
             DB::table('questions')
                 ->insert([
@@ -32,6 +30,7 @@ class QuestionSeeder extends Seeder
                     'updated_at' => date("Y-m-d H:i:s")
                 ]);
         endfor;
+
     }
 
     private static function createRandomUserId(){

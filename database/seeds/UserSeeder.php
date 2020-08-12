@@ -52,7 +52,7 @@ class UserSeeder extends Seeder
         // Add some fake users
         $faker = \Faker\Factory::create();
 
-        for($i=0; $i<=100; $i++):
+        for($i=0; $i<=50; $i++):
 
             $email = $faker->unique()->safeEmail;
             $username = explode('@', $email, 2)[0];
