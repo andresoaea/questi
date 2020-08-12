@@ -346,6 +346,18 @@ body {
     margin-bottom: 8px;
 }
 
+/* Pagination */
+.pagination {
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+
+    .page-item.active .page-link {
+        background-color: #f08727;
+        border-color: #f08727;
+    }
+}
+
 /* Footer */
 footer.main-footer {
     width: 100%;

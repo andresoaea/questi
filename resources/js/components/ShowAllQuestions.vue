@@ -100,26 +100,35 @@
       </div>
       <div class="clearfix"></div>
     </article>
+
+    <div>
+      <pagination
+        v-if="!isLoading"
+        :data="questionsWithPaginator"
+        @pagination-change-page="getQuestions"
+      ></pagination>
+    </div>
   </div>
 </template>
 
 <script>
 import { bus } from "../main";
 import QuestionsNavTabs from "./QuestionsNavTabs.vue";
+import Pagination from "laravel-vue-pagination";
 
-// Import component
 import Loading from "vue-loading-overlay";
-// Import stylesheet
 import "vue-loading-overlay/dist/vue-loading.css";
 
 export default {
   name: "ShowAllQuestions",
   components: {
     QuestionsNavTabs,
-    Loading
+    Loading,
+    pagination: Pagination
   },
   data() {
     return {
+      questionsWithPaginator: {},
       questions: {},
       questionAuthorIds: {},
       categories: {},
@@ -130,19 +139,7 @@ export default {
     };
   },
   created() {
-    let type = this.$route.path.replace("/", "");
-    let url =
-      this.$route.path === "/" ? "get-questions" : `get-questions?type=${type}`;
-
-    this.isLoading = true;
-
-    axios.get(url).then(response => {
-      setTimeout(() => {
-        this.isLoading = false;
-
-        this.updateAllData(response.data);
-      }, 600);
-    });
+    this.getQuestions(1, true);
 
     bus.$on("updateQuestions", data => {
       this.searchQuery = data.searchQuery;
@@ -150,13 +147,42 @@ export default {
     });
   },
   methods: {
-    fullQuestionUrl: function(category, slug) {
+    getQuestions(page = 1, getOnPageLoad = false) {
+      this.questions = {};
+
+      let type = this.$route.path.replace("/", "");
+      let url =
+        this.$route.path === "/"
+          ? `get-questions?page=${page}`
+          : `get-questions?page=${page}&type=${type}`;
+
+      this.isLoading = true;
+
+      if (!getOnPageLoad) {
+        $("html,body").animate(
+          { scrollTop: $(".questions-list-nav-tabs").offset().top - 20 },
+          50
+        );
+      }
+
+      setTimeout(() => {
+        axios.get(url).then(response => {
+          setTimeout(() => {
+            this.isLoading = false;
+
+            console.log(response.data.questions);
+            this.updateAllData(response.data);
+          }, 600);
+        });
+      }, 600);
+    },
+    fullQuestionUrl(category, slug) {
       return this.siteUrl + "/" + category + "/" + slug;
     },
-    getAuthorName: function(question, which) {
+    getAuthorName(question, which) {
       return this.authors[this.questionAuthorIds[question.id]][which];
     },
-    fullnameTooltip: function(question) {
+    fullnameTooltip(question) {
       return (
         "Asked by: " +
         this.getAuthorName(question, "firstname") +
@@ -164,15 +190,16 @@ export default {
         (this.getAuthorName(question, "lastname") || "")
       );
     },
-    addedFullTime: function(time) {
+    addedFullTime(time) {
       return "Added on: " + this.$options.filters.relativeTime(time, "LLLL");
     },
-    answerText: function(number) {
+    answerText(number) {
       return number === 0 ? "Answer first" : "Answer";
     },
-    updateAllData: function(data) {
+    updateAllData(data) {
       if (data.questions) {
-        this.questions = data.questions;
+        this.questionsWithPaginator = data.questions;
+        this.questions = data.questions.data;
         this.questionAuthorIds = data.question_author_ids;
         this.categories = data.categories;
         this.authors = data.authors;

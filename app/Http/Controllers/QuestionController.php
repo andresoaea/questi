@@ -194,12 +194,12 @@ class QuestionController extends Controller
 
         $categories = Category::all()->keyBy('id')->toArray();
 
-        $questions = [];
+       // $questions = [];
         $question_author_ids = [];
         foreach ($questions_resource['data'] as $question_key => $question) {
            
             //$question['answers_num'] = Answer::where('for', $question['id'])->get()->count();
-            $questions[] = $question;
+            //$questions[] = $question;
 
             $question_author_ids[$question['id']] = $question['author'];
             
@@ -208,7 +208,8 @@ class QuestionController extends Controller
         $authors = User::whereIn('id', $question_author_ids)->get()->keyBy('id')->toArray();
 
         return response()->json([
-            'questions'             => $questions,
+          //  'questions_resource'    => $questions_resource,
+            'questions'             => $questions_resource,
             'categories'            => $categories,
             'question_author_ids'   => $question_author_ids,
             'authors'               => $authors

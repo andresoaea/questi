@@ -109,7 +109,9 @@ Vue.filter("capitalize", string => {
 });
 
 Vue.filter("setImageSrc", (image, type = "default") => {
-    if (!image) return;
+    if (!image) {
+        return siteUrl + "/images/defaults/user-placeholder.svg";
+    }
 
     let filePath =
         type === "default"

@@ -15015,6 +15015,19 @@ body .popover .popover-body button {
   margin-bottom: 8px;
 }
 
+/* Pagination */
+
+.pagination {
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.pagination .page-item.active .page-link {
+  background-color: #f08727;
+  border-color: #f08727;
+}
+
 /* Footer */
 
 footer.main-footer {
