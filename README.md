@@ -58,3 +58,12 @@
     -   Administration panel
     -   Translation
     -   Much more..
+    
+#### Screenshots
+![](https://i.imgur.com/fV48nqZ.png)
+![](https://i.imgur.com/p9qpe61.png)
+![](https://i.imgur.com/XQRNHqx.png)
+
+
+
+    
