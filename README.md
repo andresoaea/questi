@@ -1,10 +1,6 @@
-### Q&A Platform with administration panel - !! In development !!
+### Q&A Platform with administration panel
 
 ###### Built on Laravel 7 + Vue
-
-###### Deployed on Heroku - DEMO:
-
-<a href="https://questi-qa.herokuapp.com/" target="_blank">https://questi-qa.herokuapp.com/</a>
 
 ##### Features:
 
