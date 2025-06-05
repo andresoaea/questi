@@ -45,15 +45,6 @@
     -   vue-progressbar - nice progress bar for ajax requests
     -   vue-slide-up-down - slide up down animation for vue
     -   laravel-vue-pagination - pagination
-
-##### To do:
-
-    -   Responsive fixes - add some media queries
-    -   Ajax pagination
-    -   Facebook login
-    -   Administration panel
-    -   Translation
-    -   Much more..
     
 #### Screenshots
 ![](https://i.imgur.com/fV48nqZ.png)
